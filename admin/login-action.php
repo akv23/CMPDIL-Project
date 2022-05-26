@@ -12,7 +12,7 @@ $smt= mysqli_query($conn,$sql);
 
 	if($rs=mysqli_fetch_assoc($smt))
 	{
-		if($password==$rs['password'])
+		if(md5($password)==$rs['password'])
 		{
 			//Creating Session...
 			
