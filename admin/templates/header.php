@@ -5,16 +5,8 @@
     <i class="bi bi-list toggle-sidebar-btn"></i>
       <a href="https://www.cmpdi.co.in/index.php?lang=Eng" class="logo d-flex align-items-center">
         <img class ="h-img" src="assets/img/android-chrome.png" alt="cmpdi logo">
-        <span class="d-none d-lg-block">Admin</span>
       </a>
     </div><!-- End Logo -->
-
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
