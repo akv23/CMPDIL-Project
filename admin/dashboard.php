@@ -41,22 +41,24 @@
 
     <div class="pagetitle">
       <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-  
-
-  
+      <?php 
+        for($i=0; $i<5; $i++){
+          echo '<div class="card mx-5">
+            <div class="card-body p-2 px-5 d-flex justify-content-between">
+              <span>date</span>
+              <span>name</span>
+            </div>
+          </div>';
+        }
+      ?>
     </section>
-
   </main><!-- End #main -->
-  <?php include("./templates/footer.php") ?>
+  <div class="fixed-bottom">
+    <?php include("./templates/footer.php") ?>
+  </div>
 
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
