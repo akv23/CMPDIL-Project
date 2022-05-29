@@ -1,57 +1,39 @@
   <!-- ======= Sidebar ======= -->
+  <head>
+  <script>
+    const active_tab = (event)=>{
+      console.log(event,"g")
+    }
+    </script>
+  </head>
   <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link " href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+  <div class="sidebar">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li>
+        <a href="dashboard.php" class="nav-link link-dark" onclick="(e)=>active_tab(e)">
+        <img class="me-2"src="https://img.icons8.com/material-sharp/20/000000/home.png"/>
+          Dashboard
         </a>
-      </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+      </li>
+      <li>
+        <a href="users.php" class="nav-link link-dark">
+        <img class="me-2"src="https://img.icons8.com/ios-filled/20/000000/group-background-selected.png"/>
+          Users
         </a>
-      </li><!-- End Components Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+      </li>
+      <li>
+        <a href="add_user.php" class="nav-link link-dark">
+        <img class="me-2"src="https://img.icons8.com/material-sharp/20/000000/add-user-male.png"/>
+          Add new user
         </a>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+      </li>
+      <li>
+        <a href="assign_duty.php" class="nav-link link-dark">
+        <img class="me-2"src="https://img.icons8.com/ios-filled/20/000000/clipboard.png"/>
+          Assign duty
         </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-      </li><!-- End Icons Nav -->
-
+      </li>
     </ul>
-
   </aside><!-- End Sidebar-->
+
+  
