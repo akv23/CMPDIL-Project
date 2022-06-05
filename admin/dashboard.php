@@ -56,7 +56,7 @@
       ?>
     </section>
   </main><!-- End #main -->
-  <div class="fixed-bottom">
+  <div class="fixed-bottom bg-light">
     <?php include("./templates/footer.php") ?>
   </div>
 

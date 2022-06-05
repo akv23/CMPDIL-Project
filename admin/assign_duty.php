@@ -44,7 +44,7 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-      <?php 
+      <!-- <?php 
         for($i=0; $i<5; $i++){
           echo '<div class="card mx-5">
             <div class="card-body p-2 px-5 d-flex justify-content-between">
@@ -53,10 +53,10 @@
             </div>
           </div>';
         }
-      ?>
+      ?> -->
     </section>
   </main><!-- End #main -->
-  <div class="fixed-bottom">
+  <div class="fixed-bottom bg-light">
     <?php include("./templates/footer.php") ?>
   </div>
 
