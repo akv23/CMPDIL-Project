@@ -52,7 +52,7 @@
 
             <!------ Include the above in your HEAD tag ---------->
 
-            <div class="container emp-profile">
+            <div class="container emp-profile shadow p-3 mb-5 bg-body rounded">
                 <form method="post">
                     <div class="row">
                         <div class="col-md-4">
