@@ -7,7 +7,7 @@ $name = $_POST['firstName'];
 $mobile = $_POST['Mob_no'];
 $Designation = $_POST['designation'];
 $sql= "insert into employee values ('$name', '$mobile', '$Designation')";
-if (mysqli_query($connection, $query)){
+if (mysqli_query($connection, $sql)){
 
 
 echo "<br/><br/><span>Data Inserted successfully...!!</span>";
