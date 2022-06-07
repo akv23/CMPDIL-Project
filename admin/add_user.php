@@ -53,10 +53,11 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
-
+                  <form action="insert.php" method="post">
                   <div class="mb-4 pb-2">
                     <select class="select">
-                      <option value="1">Title</option>
+                    <label for="form-label">Title</label>
+                      <option value="1">select</option>
                       <option value="2">Mr</option>
                       <option value="3">Mrs</option>
                       <option value="4">Miss</option>
@@ -67,7 +68,7 @@
                     <div class="col-md-6 mb-4 pb-2">
 
                       <div class="form-outline">
-                        <input type="text" id="form3Examplev2" class="form-control form-control-lg" />
+                        <input type="text" id="form3Examplev2" class="form-control form-control-lg"  name="firstName"/>
                         <label class="form-label" for="form3Examplev2">First name</label>
                       </div>
 
@@ -75,7 +76,7 @@
                     <div class="col-md-6 mb-4 pb-2">
 
                       <div class="form-outline">
-                        <input type="text" id="form3Examplev3" class="form-control form-control-lg" />
+                        <input type="text" id="form3Examplev3" class="form-control form-control-lg" name="lastName" />
                         <label class="form-label" for="form3Examplev3">Last name</label>
                       </div>
 
@@ -83,17 +84,19 @@
                   </div>
 
                   <div class="mb-4 pb-2">
+                  <label class="form-label" for="form3Examplev3" name="Designation">designation</label>
                     <select class="select">
-                      <option value="1">Designation</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                      <option value="4">Four</option>
+                      <option value="1">select</option>
+                      <option value="2">HOD</option>
+                      <option value="3">GM</option>
+                      <option value="4">AM</option>
+                      <option value="4">M</option>
                     </select>
                   </div>
 
                   <div class="mb-4 pb-2">
                     <div class="form-outline">
-                      <input type="text" id="form3Examplev4" class="form-control form-control-lg" />
+                      <input type="text" id="form3Examplev4" name="position" class="form-control form-control-lg" />
                       <label class="form-label" for="form3Examplev4">Position</label>
                     </div>
                   </div>
@@ -102,26 +105,27 @@
                     <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
 
                       <div class="form-outline">
-                        <input type="text" id="form3Examplev5" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplev5">Bussines Arena</label>
+                        <input type="text" id="form3Examplev5" name="Mob_no" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Examplev5">MOb_NO</label>
                       </div>
 
                     </div>
                     <div class="col-md-6">
 
-                      <select class="select">
+                     <!-- <select class="select">
                         <option value="1">Employees</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                         <option value="4">Four</option>
-                      </select>
+                      </select> -->
 
                     </div>
                   </div>
 
                 </div>
+                <button type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">submit</button>
               </div>
-              <div class="col-lg-6 bg-indigo text-white">
+             <!-- <div class="col-lg-6 bg-indigo text-white">
                 <div class="p-5">
                   <h3 class="fw-normal mb-5">Contact Details</h3>
 
@@ -199,8 +203,7 @@
                     </label>
                   </div>
 
-                  <button type="button" class="btn btn-light btn-lg"
-                    data-mdb-ripple-color="dark">Register</button>
+                  
 
                 </div>
               </div>
@@ -209,7 +212,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
+  
 </section>
   </main><!-- End #main -->
   <div class="fixed-bottom bg-light">
@@ -218,7 +222,9 @@
 
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <?php
 
+?>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
