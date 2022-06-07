@@ -6,7 +6,7 @@ $db = mysqli_select_db( $connection,"cmpdi"); // Selecting Database from Server
 $name = $_POST['firstName'];
 $mobile = $_POST['Mob_no'];
 $Designation = $_POST['designation'];
-$sql= "insert into employee values ('$name', '$mobile', '$Designation')";
+$sql= "insert into employee ('emp_name','mon_no','designation') values ('$name', '$mobile', '$Designation')";
 if (mysqli_query($connection, $sql)){
 
 

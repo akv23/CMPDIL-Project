@@ -57,14 +57,14 @@
                         <div class="row">
                           <div class="col-md-6 mb-4 pb-2">
                             <div class="form-outline">
-                              <input type="text" id="form3Examplev2" class="form-control form-control-lg" name="name" />
+                              <input type="text" id="form3Examplev2" placeholder="name" class="form-control form-control-lg" name="name" />
                             </div>
                           </div>
                           
                         </div>
 
                         <div class="mb-6 pb-4">
-                          <label class="form-label" for="form3Examplev3" name="Designation">designation</label>
+                          <label class="form-label" for="form3Examplev3" name="designation">Designation </label>
                           <select class="select">
                             <option value="1">select</option>
                             <option value="2">HOD</option>
@@ -74,19 +74,20 @@
                           </select>
                         </div>
 
-                        <div class="mb-4 pb-2">
+                        <!-- <div class="mb-4 pb-2">
                           <div class="form-outline">
                             <input type="text" id="form3Examplev4" name="position" class="form-control form-control-lg" />
                             <label class="form-label" for="form3Examplev4">Position</label>
                           </div>
-                        </div>
+                        </div> -->
 
                         <div class="row">
                           <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
 
                             <div class="form-outline">
-                              <input type="text" id="form3Examplev5" name="Mob_no" class="form-control form-control-lg" />
-                              <label class="form-label" for="form3Examplev5">MOb_NO</label>
+                            <label class="form-label" for="form3Examplev5">Mobile No.</label>
+                              <input type="text" id="form3Examplev5" name="mobile" class="form-control form-control-lg" />
+                              
                             </div>
 
                           </div>
