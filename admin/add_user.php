@@ -1,4 +1,4 @@
-<?php include("auth.php");?>
+<?php include("auth.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,8 +34,8 @@
 
 <body>
 
-<?php include("./templates/header.php") ?>
-<?php include("./templates/sidebar.php") ?>
+  <?php include("./templates/header.php") ?>
+  <?php include("./templates/sidebar.php") ?>
 
   <main id="main" class="main">
 
@@ -44,88 +44,68 @@
     </div><!-- End Page Title -->
 
     <section class="h-100 h-custom gradient-custom-2">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12">
-        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-          <div class="card-body p-0">
-            <div class="row g-0">
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
-                  <form action="insert.php" method="post">
-                  <div class="mb-4 pb-2">
-                    <select class="select">
-                    <label for="form-label">Title</label>
-                      <option value="1">select</option>
-                      <option value="2">Mr</option>
-                      <option value="3">Mrs</option>
-                      <option value="4">Miss</option>
-                    </select>
-                  </div>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12">
+            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+              <div class="card-body p-0">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="p-5">
+                      <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
+                      <form action="insert.php" method="post">
+                        <div class="row">
+                          <div class="col-md-6 mb-4 pb-2">
+                            <div class="form-outline">
+                              <input type="text" id="form3Examplev2" class="form-control form-control-lg" name="name" />
+                            </div>
+                          </div>
+                          
+                        </div>
 
-                  <div class="row">
-                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="mb-6 pb-4">
+                          <label class="form-label" for="form3Examplev3" name="Designation">designation</label>
+                          <select class="select">
+                            <option value="1">select</option>
+                            <option value="2">HOD</option>
+                            <option value="3">GM</option>
+                            <option value="4">AM</option>
+                            <option value="4">M</option>
+                          </select>
+                        </div>
 
-                      <div class="form-outline">
-                        <input type="text" id="form3Examplev2" class="form-control form-control-lg"  name="firstName"/>
-                        <label class="form-label" for="form3Examplev2">First name</label>
-                      </div>
+                        <div class="mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="text" id="form3Examplev4" name="position" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Examplev4">Position</label>
+                          </div>
+                        </div>
 
-                    </div>
-                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="row">
+                          <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
 
-                      <div class="form-outline">
-                        <input type="text" id="form3Examplev3" class="form-control form-control-lg" name="lastName" />
-                        <label class="form-label" for="form3Examplev3">Last name</label>
-                      </div>
+                            <div class="form-outline">
+                              <input type="text" id="form3Examplev5" name="Mob_no" class="form-control form-control-lg" />
+                              <label class="form-label" for="form3Examplev5">MOb_NO</label>
+                            </div>
 
-                    </div>
-                  </div>
+                          </div>
+                          <div class="col-md-6">
 
-                  <div class="mb-4 pb-2">
-                  <label class="form-label" for="form3Examplev3" name="Designation">designation</label>
-                    <select class="select">
-                      <option value="1">select</option>
-                      <option value="2">HOD</option>
-                      <option value="3">GM</option>
-                      <option value="4">AM</option>
-                      <option value="4">M</option>
-                    </select>
-                  </div>
-
-                  <div class="mb-4 pb-2">
-                    <div class="form-outline">
-                      <input type="text" id="form3Examplev4" name="position" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplev4">Position</label>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
-
-                      <div class="form-outline">
-                        <input type="text" id="form3Examplev5" name="Mob_no" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplev5">MOb_NO</label>
-                      </div>
-
-                    </div>
-                    <div class="col-md-6">
-
-                     <!-- <select class="select">
+                            <!-- <select class="select">
                         <option value="1">Employees</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                         <option value="4">Four</option>
                       </select> -->
 
-                    </div>
-                  </div>
+                          </div>
+                        </div>
 
-                </div>
-                <button type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">submit</button>
-              </div>
-             <!-- <div class="col-lg-6 bg-indigo text-white">
+                    </div>
+                    <button type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">submit</button>
+                  </div>
+                  <!-- <div class="col-lg-6 bg-indigo text-white">
                 <div class="p-5">
                   <h3 class="fw-normal mb-5">Contact Details</h3>
 
@@ -213,8 +193,8 @@
       </div>
     </div>
   </div>-->
-  
-</section>
+
+    </section>
   </main><!-- End #main -->
   <div class="fixed-bottom bg-light">
     <?php include("./templates/footer.php") ?>
@@ -224,7 +204,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <?php
 
-?>
+  ?>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
