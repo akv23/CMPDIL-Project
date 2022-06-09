@@ -17,8 +17,8 @@ $smt= mysqli_query($conn,$sql);
 		{
 			//Creating Session...
 			session_start();
-			$_SESSION['cid'] = $rs['mobile'];
-			$_SESSION['name']=$rs['name'];
+			$_SESSION['cid'] = $rs['mob_no'];
+			$_SESSION['name']=$rs['emp_name'];
 			$_SESSION['email']=$rs['email'];
 			$_SESSION['password']=$rs['password'];
 			

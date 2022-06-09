@@ -24,7 +24,7 @@ if($action=="registration")
      emp_name,
      mob_no,
      password,
-     email)values('$name','$email','$mobile','$password')";
+     email)values('$name','$mobile','$password','$email')";
  
      $result=mysqli_query($conn,$sql);
      if($result)
