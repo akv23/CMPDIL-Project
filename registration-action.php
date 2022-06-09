@@ -30,7 +30,7 @@ if($action=="registration")
      if($result)
      {
      
-     $smstext="Dear ".$name." , \nThank you for choosing us.\nRegards\nwww.chhatralay.in";
+     $smstext="Dear ".$name." , \nThank you, you are registered";
      echo $smstext;
      
      

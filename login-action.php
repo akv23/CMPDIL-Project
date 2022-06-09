@@ -7,7 +7,7 @@ if($_POST['id'] && $_POST['pwd'])
 	$password=$_POST['pwd'];
 	
 //Sql Query for Sing In...
-$sql="select * from employee where mobile='$cid'";
+$sql="select * from employee where mob_no='$cid'";
 
 $smt= mysqli_query($conn,$sql);
 
