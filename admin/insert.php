@@ -1,13 +1,9 @@
 <?php
+   require("add_user.php");
 $conn =mysqli_connect("localhost","root","","cmpdi");
 
- $action=$_POST['action'];
 
- if($action=="submit")
-	{
-	    
-	    
-	 if($_POST['name'] && $_POST['mobile'] && $_POST['designation'])
+if($_POST['name'] && $_POST['mobile'] && $_POST['designation'])
    {
 	     
 	 
@@ -18,7 +14,7 @@ $conn =mysqli_connect("localhost","root","","cmpdi");
 	
      
 			
-     require("./conn.php");
+  
      
 			
      $sql="insert into employee(
@@ -45,7 +41,7 @@ $conn =mysqli_connect("localhost","root","","cmpdi");
      
 
 
-}
+
 
  
 

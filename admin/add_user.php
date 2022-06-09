@@ -29,51 +29,40 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-
-//$("#txtCid").focus();
-setTimeout(function() {
-$("btnRegister").trigger('click');
-},3);
-
-
-//Admin Login Start.....
-$("#btnRegister").click(function(){
+  <script>
+    $(document).ready(function(){
+    $("#btnRegister").click(function(){
      
-     var name=$("#txtName").val(); 
-     var designation=$("#txtDesignation").val();
-     var mobile=$("#txtMobile").val(); 
-     
-     
-    $.ajax({
-       type:'post',
-       url:'insert.php',
-       data: {'action':'submit','name':name,'mobile':mobile,'designation':designation},
-       success: function(data)
-       {	 
+      var name=$("#txtName").val(); 
+      var designation=$("#txtDesignation").val();
+      var mobile=$("#txtMobile").val(); 
+      
+      
+     $.ajax({
+        type:'post',
+        url:'insert.php',
+        data: {'action':'submit','name':name,'mobile':mobile,'designation':designation},
+        success: function(data)
+        {	 
+        
+          alert(data);
+          $("#btnRegister").html("submit");
+          $("#error_disp_register").html(data); 
+          $("#error_disp_register").slideDown("slow");
+          $("#error_disp_register").slideUp(8000); 
+                  $("#txtName").val(""); 
+                  $("#txtMobile").val(""); 
+                  $("#txtDesignation").val(""); 
+                  $("#txtCid").focus();
+          
+        }
        
-         alert(data);
-         $("#btnRegister").html("submit");
-         $("#error_disp_register").html(data); 
-         $("#error_disp_register").slideDown("slow");
-         $("#error_disp_register").slideUp(8000); 
-                 $("#txtName").val(""); 
-                 $("#txtMobile").val(""); 
-                 $("#txtDesignation").val(""); 
-                 $("#txtCid").focus();
-         
-				 
-			 }
-			
-		 });
-	
-  });
-//Admin Login End.....
-});
-</script>
- 
+      });
+   
+   })
+  };
+   </script>
+
 </head>
 
 <body>
@@ -97,17 +86,16 @@ $("#btnRegister").click(function(){
                   <div class="col-lg-6">
                     <div class="p-5">
                       <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
-                      <div class="form-group">
+                      <form action="insert.php" method="post">
                         <div class="row">
                           <div class="col-md-6 mb-4 pb-2">
                             <div class="form-outline">
                               <input type="text" id="form3Examplev2 txtName" placeholder="name" class="form-control form-control-lg" name="name" />
                             </div>
                           </div>
-                          </div>
                           
                         </div>
-                        <div class="form-group">
+
                         <div class="mb-6 pb-4">
                           <label class="form-label" for="form3Examplev3 txtDesignation" name="designation">Designation </label>
                           <select class="select">
@@ -118,7 +106,6 @@ $("#btnRegister").click(function(){
                             <option value="4">M</option>
                           </select>
                         </div>
-                        </div>
 
                         <!-- <div class="mb-4 pb-2">
                           <div class="form-outline">
@@ -126,7 +113,7 @@ $("#btnRegister").click(function(){
                             <label class="form-label" for="form3Examplev4">Position</label>
                           </div>
                         </div> -->
-                        <div class="form-group">
+
                         <div class="row">
                           <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
 
@@ -148,12 +135,10 @@ $("#btnRegister").click(function(){
 
                           </div>
                         </div>
-                        </div>
 
                     </div>
-                    <div class="form-group">
                     <button type="submit" class="btn btn-light btn-lg" id="btnRegister"data-mdb-ripple-color="dark">submit</button>
-                  </div></div>
+                  </div>
                   <!-- <div class="col-lg-6 bg-indigo text-white">
                 <div class="p-5">
                   <h3 class="fw-normal mb-5">Contact Details</h3>
@@ -242,7 +227,7 @@ $("#btnRegister").click(function(){
       </div>
     </div>
   </div>-->
-
+</form>
     </section>
   </main><!-- End #main -->
   <div class="fixed-bottom bg-light">
@@ -266,13 +251,6 @@ $("#btnRegister").click(function(){
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="js/bootstrap.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="js/jquery.scrollTo.js"></script>
 
 </body>
 
