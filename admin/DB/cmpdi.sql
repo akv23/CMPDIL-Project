@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2022 at 11:23 AM
+-- Generation Time: Jun 10, 2022 at 12:34 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -62,6 +62,7 @@ CREATE TABLE `employee` (
   `login_id` int(10) NOT NULL,
   `emp_name` varchar(50) NOT NULL,
   `designation` varchar(50) NOT NULL,
+  `designation_id` int(10) NOT NULL,
   `email` varchar(20) NOT NULL,
   `mob_no` int(14) NOT NULL,
   `create_date` date NOT NULL DEFAULT current_timestamp(),
@@ -73,8 +74,8 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`emp_id`, `login_id`, `emp_name`, `designation`, `email`, `mob_no`, `create_date`, `update_date`, `last_login_date`) VALUES
-(1, 0, 'sakshi', 'hod', 'sakshiswati33@gmail.', 987654321, '2022-06-10', '2022-06-10', '2022-06-10 09:02:56');
+INSERT INTO `employee` (`emp_id`, `login_id`, `emp_name`, `designation`, `designation_id`, `email`, `mob_no`, `create_date`, `update_date`, `last_login_date`) VALUES
+(1, 0, 'sakshi', 'hod', 0, 'sakshiswati33@gmail.', 987654321, '2022-06-10', '2022-06-10', '2022-06-10 10:32:52');
 
 -- --------------------------------------------------------
 
@@ -85,12 +86,19 @@ INSERT INTO `employee` (`emp_id`, `login_id`, `emp_name`, `designation`, `email`
 DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login` (
   `login_id` int(10) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `emp_name` varchar(50) NOT NULL,
   `mob_no` int(14) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(10) NOT NULL,
   `register_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`login_id`, `emp_name`, `mob_no`, `email`, `password`, `register_date`) VALUES
+(1, 'sakshi swati', 987654321, 'sakshiswati33@gmail.com', '12345', '2022-06-10 10:03:55');
 
 -- --------------------------------------------------------
 
@@ -126,7 +134,9 @@ ALTER TABLE `designation`
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`emp_id`);
+  ADD PRIMARY KEY (`emp_id`),
+  ADD KEY `employee_ibfk_2` (`designation_id`),
+  ADD KEY `employee_ibfk_1` (`login_id`);
 
 --
 -- Indexes for table `login`
@@ -160,7 +170,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `login_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `login_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
