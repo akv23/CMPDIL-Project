@@ -30,68 +30,74 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <!-- bootstrap-css -->
-<link rel="stylesheet" href="css/bootstrap.min.css" >
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href="css/style-responsive.css" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- //bootstrap-css -->
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/style-responsive.css" rel="stylesheet" />
+  <!-- font CSS -->
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<script>
-$(document).ready(function(){
+  <script>
+    $(document).ready(function() {
 
-//$("#txtCid").focus();
-setTimeout(function() {
-$("#txtCid").trigger('click');
-},10);
+      //$("#txtCid").focus();
+      setTimeout(function() {
+        $("#txtCid").trigger('click');
+      }, 10);
 
 
-//Admin Login Start.....
-   $("#btnRegister").click(function(){
-     
-    var designation=$("#txtDesi").val(); 
-    var role=$("#txtRole").val(); 
-     var name=$("#txtName").val(); 
-     var email=$("#txtemail").val();
-     var mobile=$("#txtMobile").val(); 
-     
-     
-		$.ajax({
-			 type:'post',
-			 url:'insert.php',
-			 data: {'action':'registration','email':email,'name':name,'mobile':mobile,'designation':designation,'role':role},
-			 success: function(data)
-			 {	 
-			 
-				 alert(data);
-				 $("#btnRegister").html("ADD");
-				 $("#error_disp_register").html(data); 
-				 $("#error_disp_register").slideDown("slow");
-				 $("#error_disp_register").slideUp(8000); 
-				 $("#txtCid").val("");
-                 $("#txtName").val(""); 
-                 $("#txtMobile").val(""); 
-                 $("#txtDesi").val(""); 
-                 $("#txtRole").val(""); 
-                 $("#txtCid").focus();
-				 
-			 }
-			
-		 });
-	
-  });
-//Admin Login End.....
-});
-</script>
+      //Admin Login Start.....
+      $("#btnRegister").click(function() {
+
+        var designation = $("#txtDesi").val();
+        var role = $("#txtRole").val();
+        var name = $("#txtName").val();
+        var email = $("#txtemail").val();
+        var mobile = $("#txtMobile").val();
+
+
+        $.ajax({
+          type: 'post',
+          url: 'insert.php',
+          data: {
+            'action': 'registration',
+            'email': email,
+            'name': name,
+            'mobile': mobile,
+            'designation': designation,
+            'role': role
+          },
+          success: function(data) {
+
+            alert(data);
+            $("#btnRegister").html("ADD");
+            $("#error_disp_register").html(data);
+            $("#error_disp_register").slideDown("slow");
+            $("#error_disp_register").slideUp(8000);
+            $("#txtCid").val("");
+            $("#txtName").val("");
+            $("#txtMobile").val("");
+            $("#txtDesi").val("");
+            $("#txtRole").val("");
+            $("#txtCid").focus();
+
+          }
+
+        });
+
+      });
+      //Admin Login End.....
+    });
+  </script>
 </head>
 
 <body>
@@ -104,56 +110,73 @@ $("#txtCid").trigger('click');
     <div class="pagetitle">
       <h1>Add User</h1>
     </div><!-- End Page Title -->
-    <div class="row">
-  <div class="col-sm-4">&nbsp;</div>
-  <div class="col-sm-4">
-      <br><br>
-    <center>
-    <div class="d-flex justify-content-center py-4">
-                <a href="https://www.cmpdi.co.in/index.php?lang=Eng" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/android-chrome.png" alt="CCL logo" width="100" height="100">
-                  <span class="d-none d-lg-block"></span>
-                </a>
+    <div class="justify-content-center  emp-profile shadow" style="margin-bottom: 10%;">
+      <div>
+        <center>
+          <div class="d-flex justify-content-center py-4">
+            <img src="assets/img/android-chrome.png" alt="CCL logo" width="100" height="100">
+            <span class="d-none d-lg-block"></span>
+          </div>
+          <h2>NEW USER</h2>
+        </center>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              Name
+              <input class="form-control" placeholder="Enter Name" name="txtName" id="txtName" type="text" />
+            </div>
+            <div class="form-group">
+              Email
+              <input class="form-control" placeholder="Enter Email" name="txtemail" id="txtemail" type="text" />
+            </div>
+            <div class="form-group">
+              Mobile Number
+              <input class="form-control" placeholder="Enter Mobile" name="txtMobile" id="txtMobile" type="text" />
+            </div>
+            <div class="form-group">
+              DESIGNATION
+              <input class="form-control" placeholder="Enter Designation" name="txtDesi" id="txtDesi" type="text" />
+            </div>
+
+            <div id="error_disp_register"></div>
+            <div class="form-group">
+              ROLE
+              <input class="form-control" placeholder="Enter Role" name="txtRole" id="txtRole" type="text" />
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              Employee ID
+              <input class="form-control" placeholder="Enter Employee ID" name="txtName" id="txtName" type="text" />
+            </div>
+            <div class="form-group">
+              Password
+              <input class="form-control" placeholder="Enter Password" name="txtemail" id="txtemail" type="password" />
+            </div>
+            <div class="form-group">
+              Allow Admin Control<br>
+              <div class="form-check form-check-inline mt-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Yes
+                </label>
               </div>
-         	<h2>NEW USER</h2>
-    </center>
-		                
-                         <div class="form-group">
-							   Enter Name 
-                               <input class="form-control" placeholder="Enter Name" name="txtName" id="txtName" type="text" />
-                         </div>
-                         <div class="form-group">
-							   Enter  Email 
-                               <input class="form-control" placeholder="Enter Email" name="txtemail" id="txtemail" type="text" />
-                         </div>
-                         <div class="form-group">
-							   Enter Mobile Number 
-                               <input class="form-control" placeholder="Enter Mobile" name="txtMobile" id="txtMobile" type="text" />
-                         </div>
-                         <div class="form-group">
-							   DESIGNATION 
-                               <input class="form-control" placeholder="Enter Designation" name="txtDesi" id="txtDesi" type="text" />
-                         </div>
-                                
-                                <div id="error_disp_register"></div>
-                                <div class="form-group">
-							   ROLE 
-                               <input class="form-control" placeholder="Enter Role" name="txtRole" id="txtRole" type="text" />
-                         </div>
-                                
-                                <div id="error_disp_register"></div>
-								<center>
-								<button type="button" id="btnRegister"  class="btn btn-lg btn-primary">ADD</button>
-								</center><br>
-		
-		<br><br>
-	
-	
-	
-<br><br>
-</div>
-  <div class="col-sm-4">&nbsp;</div>
-</div>
+              <div class="form-check form-check-inline mt-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div id="error_disp_register"></div>
+        <center class="py-3 d-grid">
+          <button type="button" id="btnRegister" class="btn btn-lg btn-primary">ADD</button>
+        </center>
+      </div>
+    </div>
   </main><!-- End #main -->
   <div class="fixed-bottom bg-light">
     <?php include("./templates/footer.php") ?>
@@ -173,14 +196,14 @@ $("#txtCid").trigger('click');
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
- 
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="js/jquery.scrollTo.js"></script>
+
+  <script src="js/bootstrap.js"></script>
+  <script src="js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/jquery.slimscroll.js"></script>
+  <script src="js/jquery.nicescroll.js"></script>
+  <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+  <script src="js/jquery.scrollTo.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
@@ -192,4 +215,5 @@ $("#txtCid").trigger('click');
 
 
 </head>
+
 <body>
