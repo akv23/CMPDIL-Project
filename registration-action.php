@@ -20,7 +20,7 @@ if($action=="registration")
      require("./conn.php");
      
 			
-     $sql="insert into employee(
+     $sql="insert into login(
      emp_name,
      mob_no,
      password,

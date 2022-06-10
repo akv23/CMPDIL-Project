@@ -29,40 +29,69 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <script>
-    $(document).ready(function(){
-    $("#btnRegister").click(function(){
-     
-      var name=$("#txtName").val(); 
-      var designation=$("#txtDesignation").val();
-      var mobile=$("#txtMobile").val(); 
-      
-      
-     $.ajax({
-        type:'post',
-        url:'insert.php',
-        data: {'action':'submit','name':name,'mobile':mobile,'designation':designation},
-        success: function(data)
-        {	 
-        
-          alert(data);
-          $("#btnRegister").html("submit");
-          $("#error_disp_register").html(data); 
-          $("#error_disp_register").slideDown("slow");
-          $("#error_disp_register").slideUp(8000); 
-                  $("#txtName").val(""); 
-                  $("#txtMobile").val(""); 
-                  $("#txtDesignation").val(""); 
-                  $("#txtCid").focus();
-          
-        }
-       
-      });
-   
-   })
-  };
-   </script>
+  <!-- bootstrap-css -->
+<link rel="stylesheet" href="css/bootstrap.min.css" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/style-responsive.css" rel="stylesheet"/>
+<!-- font CSS -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+//$("#txtCid").focus();
+setTimeout(function() {
+$("#txtCid").trigger('click');
+},10);
+
+
+//Admin Login Start.....
+   $("#btnRegister").click(function(){
+     
+    var designation=$("#txtDesi").val(); 
+    var role=$("#txtRole").val(); 
+     var name=$("#txtName").val(); 
+     var email=$("#txtemail").val();
+     var mobile=$("#txtMobile").val(); 
+     
+     
+		$.ajax({
+			 type:'post',
+			 url:'insert.php',
+			 data: {'action':'registration','email':email,'name':name,'mobile':mobile,'designation':designation,'role':role},
+			 success: function(data)
+			 {	 
+			 
+				 alert(data);
+				 $("#btnRegister").html("ADD");
+				 $("#error_disp_register").html(data); 
+				 $("#error_disp_register").slideDown("slow");
+				 $("#error_disp_register").slideUp(8000); 
+				 $("#txtCid").val("");
+                 $("#txtName").val(""); 
+                 $("#txtMobile").val(""); 
+                 $("#txtDesi").val(""); 
+                 $("#txtRole").val(""); 
+                 $("#txtCid").focus();
+				 
+			 }
+			
+		 });
+	
+  });
+//Admin Login End.....
+});
+</script>
 </head>
 
 <body>
@@ -75,160 +104,56 @@
     <div class="pagetitle">
       <h1>Add User</h1>
     </div><!-- End Page Title -->
-
-    <section class="h-100 h-custom gradient-custom-2">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12">
-            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-              <div class="card-body p-0">
-                <div class="row g-0">
-                  <div class="col-lg-6">
-                    <div class="p-5">
-                      <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
-                      <form action="insert.php" method="post">
-                        <div class="row">
-                          <div class="col-md-6 mb-4 pb-2">
-                            <div class="form-outline">
-                              <input type="text" id="form3Examplev2 txtName" placeholder="name" class="form-control form-control-lg" name="name" />
-                            </div>
-                          </div>
-                          
-                        </div>
-
-                        <div class="mb-6 pb-4">
-                          <label class="form-label" for="form3Examplev3 txtDesignation" name="designation">Designation </label>
-                          <select class="select">
-                            <option value="1">select</option>
-                            <option value="2">HOD</option>
-                            <option value="3">GM</option>
-                            <option value="4">AM</option>
-                            <option value="4">M</option>
-                          </select>
-                        </div>
-
-                        <!-- <div class="mb-4 pb-2">
-                          <div class="form-outline">
-                            <input type="text" id="form3Examplev4" name="position" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplev4">Position</label>
-                          </div>
-                        </div> -->
-
-                        <div class="row">
-                          <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
-
-                            <div class="form-outline">
-                            <label class="form-label" for="form3Examplev5">Mobile No.</label>
-                              <input type="text" id="form3Examplev5 txtMobile" name="mobile" class="form-control form-control-lg" />
-                              
-                            </div>
-
-                          </div>
-                          <div class="col-md-6">
-
-                            <!-- <select class="select">
-                        <option value="1">Employees</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                      </select> -->
-
-                          </div>
-                        </div>
-
-                    </div>
-                    <button type="submit" class="btn btn-light btn-lg" id="btnRegister"data-mdb-ripple-color="dark">submit</button>
-                  </div>
-                  <!-- <div class="col-lg-6 bg-indigo text-white">
-                <div class="p-5">
-                  <h3 class="fw-normal mb-5">Contact Details</h3>
-
-                  <div class="mb-4 pb-2">
-                    <div class="form-outline form-white">
-                      <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplea2">Street + Nr</label>
-                    </div>
-                  </div>
-
-                  <div class="mb-4 pb-2">
-                    <div class="form-outline form-white">
-                      <input type="text" id="form3Examplea3" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplea3">Additional Information</label>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-5 mb-4 pb-2">
-
-                      <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea4" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea4">Zip Code</label>
-                      </div>
-
-                    </div>
-                    <div class="col-md-7 mb-4 pb-2">
-
-                      <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea5">Place</label>
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="mb-4 pb-2">
-                    <div class="form-outline form-white">
-                      <input type="text" id="form3Examplea6" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplea6">Country</label>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-5 mb-4 pb-2">
-
-                      <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea7" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea7">Code +</label>
-                      </div>
-
-                    </div>
-                    <div class="col-md-7 mb-4 pb-2">
-
-                      <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea8" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea8">Phone Number</label>
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="form-outline form-white">
-                      <input type="text" id="form3Examplea9" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplea9">Your Email</label>
-                    </div>
-                  </div>
-
-                  <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                    <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
-                    <label class="form-check-label text-white" for="form2Example3">
-                      I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your
-                      site.
-                    </label>
-                  </div>
-
-                  
-
-                </div>
+    <div class="row">
+  <div class="col-sm-4">&nbsp;</div>
+  <div class="col-sm-4">
+      <br><br>
+    <center>
+    <div class="d-flex justify-content-center py-4">
+                <a href="https://www.cmpdi.co.in/index.php?lang=Eng" class="logo d-flex align-items-center w-auto">
+                  <img src="assets/img/android-chrome.png" alt="CCL logo" width="100" height="100">
+                  <span class="d-none d-lg-block"></span>
+                </a>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
-</form>
-    </section>
+         	<h2>NEW USER</h2>
+    </center>
+		                
+                         <div class="form-group">
+							   Enter Name 
+                               <input class="form-control" placeholder="Enter Name" name="txtName" id="txtName" type="text" />
+                         </div>
+                         <div class="form-group">
+							   Enter  Email 
+                               <input class="form-control" placeholder="Enter Email" name="txtemail" id="txtemail" type="text" />
+                         </div>
+                         <div class="form-group">
+							   Enter Mobile Number 
+                               <input class="form-control" placeholder="Enter Mobile" name="txtMobile" id="txtMobile" type="text" />
+                         </div>
+                         <div class="form-group">
+							   DESIGNATION 
+                               <input class="form-control" placeholder="Enter Designation" name="txtDesi" id="txtDesi" type="text" />
+                         </div>
+                                
+                                <div id="error_disp_register"></div>
+                                <div class="form-group">
+							   ROLE 
+                               <input class="form-control" placeholder="Enter Role" name="txtRole" id="txtRole" type="text" />
+                         </div>
+                                
+                                <div id="error_disp_register"></div>
+								<center>
+								<button type="button" id="btnRegister"  class="btn btn-lg btn-primary">ADD</button>
+								</center><br>
+		
+		<br><br>
+	
+	
+	
+<br><br>
+</div>
+  <div class="col-sm-4">&nbsp;</div>
+</div>
   </main><!-- End #main -->
   <div class="fixed-bottom bg-light">
     <?php include("./templates/footer.php") ?>
@@ -248,10 +173,23 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
+ 
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/jquery.slimscroll.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="js/jquery.scrollTo.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
 
 </html>
+
+
+
+
+</head>
+<body>

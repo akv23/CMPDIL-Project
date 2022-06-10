@@ -1,47 +1,51 @@
 <?php
-   require("add_user.php");
-$conn =mysqli_connect("localhost","root","","cmpdi");
+require "conn.php";
+ $action=$_POST['action'];
 
-
-if($_POST['name'] && $_POST['mobile'] && $_POST['designation'])
+if($action=="registration")
+	{
+	    
+	    
+	 if($_POST['name'] && $_POST['mobile'] && $_POST['designation'])
    {
 	     
 	 
 	 $name=$_POST['name'];
 	 $mobile=$_POST['mobile'];
-	 $designation=$_POST['designation'];
-
-	
+	 $desi=$_POST['designation'];
+   $email=$_POST['email'];
+   $role=$_POST['role'];
+	 require("./conn.php");
      
 			
-  
+     require("./conn.php");
      
 			
      $sql="insert into employee(
      emp_name,
      mob_no,
      designation,
-     )values('$name','$mobile','$designation')";
+     email)values('$name','$mobile','$desi','$email')";
  
      $result=mysqli_query($conn,$sql);
      if($result)
      {
      
-     $smstext="Dear ".$name." , \nyour data submitted";
+     $smstext="Dear ".$name." , \nThank you, user added";
      echo $smstext;
      
      
      }
      else
      {
-     echo "Sorry , some error occurs.".mysqli_error($conn);
+     echo "Sorry Not added.".mysqli_error($conn);
      }
     }
      
      
 
 
-
+}
 
  
 
