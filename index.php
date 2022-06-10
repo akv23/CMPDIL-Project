@@ -41,7 +41,7 @@ $("#txtId").focus();
 				 if(x=="1")
 				 {
 					
-				 window.location=".data.php";
+				 window.location="data.php";
 				 }
 				 else
 				 { 
