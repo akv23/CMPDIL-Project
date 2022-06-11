@@ -138,7 +138,7 @@
     </section>-->
     <section class="content-body body-sign">
 
-            <div class="card card-outline-secondary" style="padding: 3%;margin-top: 4%;font-size:18px; font-weight:600; margin-bottom: 4%;border-radius: 0.5rem;background: #fff;">
+            <div class="card card-outline-secondary" style="padding: 3%;margin: 5%;font-size:18px; font-weight:600; ;border-radius: 0.5rem;background: #fff;">
                         
                         <div class="card-body">
                             <form class="form" role="form" autocomplete="off">
