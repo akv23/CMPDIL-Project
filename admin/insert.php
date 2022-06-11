@@ -6,15 +6,17 @@ if($action=="registration")
 	{
 	    
 	    
-	 if($_POST['name'] && $_POST['mobile'] && $_POST['designation'])
+	 if($_POST['name'] && $_POST['mobile'] && $_POST['designation'] && $_POST['role'] && $_POST['eid'] && $_POST['admin'])
    {
 	     
 	 
 	 $name=$_POST['name'];
 	 $mobile=$_POST['mobile'];
 	 $desi=$_POST['designation'];
-   $email=$_POST['email'];
-   $role=$_POST['role'];
+     $email=$_POST['email'];
+     $role=$_POST['role'];
+     $eid=$_POST['eid'];
+     $admin=$_POST['admin'];
 	 require("./conn.php");
      
 			
@@ -25,7 +27,10 @@ if($action=="registration")
      emp_name,
      mob_no,
      designation,
-     email)values('$name','$mobile','$desi','$email')";
+     email,
+     emp_id,
+     role,
+     admin)values('$name','$mobile','$desi','$email','$eid','$role','$admin')";
  
      $result=mysqli_query($conn,$sql);
      if($result)

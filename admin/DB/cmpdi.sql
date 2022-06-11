@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2022 at 12:34 PM
+-- Generation Time: Jun 11, 2022 at 11:03 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -59,23 +59,24 @@ INSERT INTO `designation` (`designation_id`, `designation`, `role`) VALUES
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
   `emp_id` int(16) NOT NULL,
-  `login_id` int(10) NOT NULL,
   `emp_name` varchar(50) NOT NULL,
+  `mob_no` varchar(15) NOT NULL,
   `designation` varchar(50) NOT NULL,
-  `designation_id` int(10) NOT NULL,
+  `role` varchar(40) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `mob_no` int(14) NOT NULL,
+  `duty_day` varchar(10) NOT NULL,
   `create_date` date NOT NULL DEFAULT current_timestamp(),
   `update_date` date NOT NULL DEFAULT current_timestamp(),
-  `last_login_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `last_login_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `admin` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`emp_id`, `login_id`, `emp_name`, `designation`, `designation_id`, `email`, `mob_no`, `create_date`, `update_date`, `last_login_date`) VALUES
-(1, 0, 'sakshi', 'hod', 0, 'sakshiswati33@gmail.', 987654321, '2022-06-10', '2022-06-10', '2022-06-10 10:32:52');
+INSERT INTO `employee` (`emp_id`, `emp_name`, `mob_no`, `designation`, `role`, `email`, `duty_day`, `create_date`, `update_date`, `last_login_date`, `admin`) VALUES
+(97, 'sakshi', '0987654321', 'hod', 'head', 'sakshiswati33@gmail.', '', '2022-06-11', '2022-06-11', '2022-06-11 08:13:03', 'yes');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login` (
   `login_id` int(10) NOT NULL,
   `emp_name` varchar(50) NOT NULL,
-  `mob_no` int(14) NOT NULL,
+  `mob_no` varchar(14) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(10) NOT NULL,
   `register_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -98,7 +99,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`login_id`, `emp_name`, `mob_no`, `email`, `password`, `register_date`) VALUES
-(1, 'sakshi swati', 987654321, 'sakshiswati33@gmail.com', '12345', '2022-06-10 10:03:55');
+(6, 'sakshi', '0987654321', 'sakshiswati33@gmail.com', '12345', '2022-06-11 08:10:50');
 
 -- --------------------------------------------------------
 
@@ -134,15 +135,14 @@ ALTER TABLE `designation`
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`emp_id`),
-  ADD KEY `employee_ibfk_2` (`designation_id`),
-  ADD KEY `employee_ibfk_1` (`login_id`);
+  ADD PRIMARY KEY (`emp_id`);
 
 --
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`login_id`);
+  ADD PRIMARY KEY (`login_id`),
+  ADD UNIQUE KEY `mob_no` (`mob_no`);
 
 --
 -- Indexes for table `tbl_portal_admin`
@@ -161,16 +161,10 @@ ALTER TABLE `designation`
   MODIFY `designation_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `employee`
---
-ALTER TABLE `employee`
-  MODIFY `emp_id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `login_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `login_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

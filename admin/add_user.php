@@ -63,6 +63,9 @@
         var name = $("#txtName").val();
         var email = $("#txtemail").val();
         var mobile = $("#txtMobile").val();
+        var role = $("#txtRole").val();
+        var eid = $("#txtId").val();
+        var admin = $("#txtAdmin").val();
 
 
         $.ajax({
@@ -74,7 +77,9 @@
             'name': name,
             'mobile': mobile,
             'designation': designation,
-            'role': role
+            'role': role,
+            'eid': eid,
+            'admin': admin,
           },
           success: function(data) {
 
@@ -83,11 +88,12 @@
             $("#error_disp_register").html(data);
             $("#error_disp_register").slideDown("slow");
             $("#error_disp_register").slideUp(8000);
-            $("#txtCid").val("");
+            $("#txtId").val("");
             $("#txtName").val("");
             $("#txtMobile").val("");
             $("#txtDesi").val("");
             $("#txtRole").val("");
+            $("#txtAdmin").val("");
             $("#txtCid").focus();
 
           }
@@ -147,16 +153,16 @@
           <div class="col-6">
             <div class="form-group">
               Employee ID
-              <input class="form-control" placeholder="Enter Employee ID" name="txtName" id="txtName" type="text" />
+              <input class="form-control" placeholder="Enter Employee ID" name="txtId" id="txtId" type="text" />
             </div>
             <div class="form-group">
-              Password
-              <input class="form-control" placeholder="Enter Password" name="txtemail" id="txtemail" type="password" />
+              ADMIN
+              <input class="form-control" placeholder="yes or no" name="txtemail" id="txtAdmin" type="text" />
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               Allow Admin Control<br>
               <div class="form-check form-check-inline mt-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1 txtAdmin">
                 <label class="form-check-label" for="flexRadioDefault1">
                   Yes
                 </label>
@@ -167,7 +173,7 @@
                   No
                 </label>
               </div>
-            </div>
+            </div>-->
           </div>
 
         </div>

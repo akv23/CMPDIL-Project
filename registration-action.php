@@ -40,11 +40,13 @@ if($action=="registration")
      echo "Sorry Not Registered, Your mobile may be allready registered.".mysqli_error($conn);
      }
     }
-     
-     
-
 
 }
+
+     
+
+
+
 
  
 
