@@ -30,6 +30,11 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -38,8 +43,11 @@
     <?php include("./templates/sidebar.php") ?>
 
     <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>Change Password</h1>
+        </div>
         <section role="main" class="content-body pb-none">
-                        
+    <!--                    
     <section class="body-sign" style="max-width: 950px;">
         <div class="row">
             <div class="col-lg-12">
@@ -125,7 +133,43 @@
                     </div></div></section>
                 </div>
 
-                </section>
+                
+
+    </section>-->
+    <section class="content-body body-sign">
+
+            <div class="card card-outline-secondary" style="padding: 3%;margin-top: 4%;font-size:18px; font-weight:600; margin-bottom: 4%;border-radius: 0.5rem;background: #fff;">
+                        
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="inputPasswordOld">Current Password</label>
+                                    <input type="password" class="form-control" id="inputPasswordOld" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordNew">New Password</label>
+                                    <input type="password" class="form-control" id="inputPasswordNew" required="">
+                                    <span class="form-text small text-muted">
+                                            The password must be 7-10 characters, and must <em>not</em> contain spaces.
+                                        </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordNewVerify">Verify</label>
+                                    <input type="password" class="form-control" id="inputPasswordNewVerify" required="">
+                                    <span class="form-text small text-muted">
+                                            To confirm, type the new password again.
+                                        </span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg float-right">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+        </section>
     </main><!-- End #main -->
     <div class="fixed-bottom bg-light">
         <?php include("./templates/footer.php") ?>
