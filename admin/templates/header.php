@@ -41,7 +41,12 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="change_password.php">
+                <i class="bi bi-gear"></i>
+                <span>Change Password</span>
+              </a>
+            </li>
            
             <li>
               <hr class="dropdown-divider">
