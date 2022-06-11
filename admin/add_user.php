@@ -46,6 +46,8 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+  
+
   <script>
     $(document).ready(function() {
 
@@ -133,7 +135,7 @@
             </div>
             <div class="form-group">
               Email
-              <input class="form-control" placeholder="Enter Email" name="txtemail" id="txtemail" type="text" />
+              <input class="form-control" placeholder="Enter Email" name="txtemail" id="txtemail" type="email" />
             </div>
             <div class="form-group">
               Mobile Number
@@ -141,7 +143,17 @@
             </div>
             <div class="form-group">
               DESIGNATION
-              <input class="form-control" placeholder="Enter Designation" name="txtDesi" id="txtDesi" type="text" />
+              <!-- <input class="form-control" placeholder="Enter Designation" name="txtDesi" id="txtDesi" type="text" /> -->
+              <select class="form-control" name="txtDesi" id="txtDesi">
+                <option value="1">MT</option>
+                <option value="2">AM</option>
+                <option value="3">DM</option>
+                <option value="4">M</option>
+                <option value="5">SM</option>
+                <option value="6">CM</option>
+                <option value="7">GM</option>
+                <option value="8">HOD</option>
+              </select>
             </div>
 
             <div id="error_disp_register"></div>
@@ -156,24 +168,28 @@
               <input class="form-control" placeholder="Enter Employee ID" name="txtId" id="txtId" type="text" />
             </div>
             <div class="form-group">
-              ADMIN
-              <input class="form-control" placeholder="yes or no" name="txtemail" id="txtAdmin" type="text" />
+              Password
+              <input class="form-control" placeholder="Enter Password" name="txtpass" id="txtpass" type="password" />
             </div>
-            <!--<div class="form-group">
+            <!-- <div class="form-group">
+            Allow Admin Control<br>
+              <input class="form-control" placeholder="yes or no" name="txtemail" id="txtAdmin" type="text" />
+            </div> -->
+            <div class="form-group">
               Allow Admin Control<br>
-              <div class="form-check form-check-inline mt-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1 txtAdmin">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Yes
-                </label>
+              <div class="mt-2">
+                <input class="form-check-input" type="radio" name="radio" id="radio" value="Yes"> Yes
+                <!-- <label class="form-check-label" for="flexRadioDefault1"> -->
+                <!-- Yes -->
+                <!-- </label> -->
+                <!-- </div> -->
+                <!-- <div class="form-check form-check-inline mt-2"> -->
+                <input class="form-check-input ms-5" type="radio" name="radio" id="radio" value="No" checked> No
+                <!-- <label class="form-check-label" for="flexRadioDefault2"> -->
+                <!-- No -->
+                <!-- </label> -->
               </div>
-              <div class="form-check form-check-inline mt-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  No
-                </label>
-              </div>
-            </div>-->
+            </div>
           </div>
 
         </div>
