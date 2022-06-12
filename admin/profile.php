@@ -70,77 +70,61 @@ $rs=mysqli_fetch_assoc($smt);
                                     $smt=mysqli_query($conn,$sql);
                                     while($rs=mysqli_fetch_assoc($smt))
                                     {
-             
                                         echo '<div class="col-md-6">
-                                        <div class="profile-head">';
-                                        echo '<h5>'
-                                     .$rs['emp_id'].  '</h5>';
-                                   echo '<h6>
-                                    Head Manager
-                                   </h6>
-                                   <p class="proile-rating">
-                                   <p>YEAR EXPERIENCE : <span>
-                                   10</span></p>';
-                                   echo ' <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                   <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                   </li>
-                                   
-                                   </ul>
-                                   </div>
-                                  </div>
-                        
-                                   </div>
-                                   <div class="row">
-                       <div class="col-md-4">';
-                            
-                        echo ' </div>
-                       <div class="col-md-8">
-                           <div class="tab-content profile-tab" id="myTabContent">
-                               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                        <label>admin id</label>
-                                        </div>';
-                                        echo '<div class="col-md-6">' .$rs['emp_id']. '</div>';
-                                         echo ' </div>
-                                          </div>
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                         <label>Name</label>
-                                            </div>
-                                       <div class="col-md-6">
-                                        <p> ADMIN</p>
-                                         </div>
+                                        <div class="profile-head">
+                                            <h5>'.$rs['emp_id'].'</h5>
+                                            <h6>'.$rs['designation'].'</h6>
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                         <label>password</label>
-                                        </div>';
-                                        echo '<div class="col-md-6 '.$rs['password']. ' </div>';
-                                     echo'</div>
-                                   <div class="row">
-                                        <div class="col-md-6">
-                                        <label>Phone</label>
-                                         </div>
-                                        <div class="col-md-6">';
-                                         echo'<p>'.$rs['mob_no'].'</p>';
-                                       echo' </div>
-                                         </div>
+                                    </div>
+                                    
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Designation</label>
+                                        <div class="col-md-4">
                                         </div>
-                                        <div class="col-md-6">';
-                                        echo' <p>'.$rs['designation'].'</p>';
-                                        echo' </div>
-                                         </div>
+                                        <div class="col-md-8">
+                                            <div class="tab-content profile-tab" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>admin id</label>
+                                                        </div>
+                                                        <div class="col-md-6">'.$rs['emp_id'].'</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Name</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p> ADMIN</p>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Phone</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>'.$rs['mob_no'].'</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Designation</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>'.$rs['designation'].'</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                         </div>
-                                         </div>
-                                         </div>
-                                         </form>
-                                         </div>';
+                                    </div>
+                                    </form>
+                                    </div>';
                                     };
                                     ?>
 
