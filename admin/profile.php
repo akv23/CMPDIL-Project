@@ -77,74 +77,76 @@ $rs=mysqli_fetch_assoc($smt);
                                     while($rs=mysqli_fetch_assoc($smt))
                                     {
              
-                                        echo '<div class="col-md-6">';
-                                        echo '<div class="profile-head">';
-                                        echo "<h5>" .$rs['emp_id'].  "</h5>";
-                                   echo "<h6>";
-                                   echo " Head Manager"
-                                   echo " </h6>";
-                                   echo "<p class="proile-rating">"; 
-                                   <p>YEAR EXPERIENCE : <span>";10</span>";</p>";
-                                   echo " <ul class="nav nav-tabs" id="myTab" role="tablist">";
-                                   echo " <li class="nav-item">";
-                                   echo "  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>";
-                                   echo " </li>";
+                                        echo '<div class="col-md-6">
+                                        <div class="profile-head">';
+                                        echo '<h5>'
+                                     .$rs['emp_id'].  '</h5>';
+                                   echo '<h6>
+                                    Head Manager
+                                   </h6>
+                                   <p class="proile-rating">
+                                   <p>YEAR EXPERIENCE : <span>
+                                   10</span></p>';
+                                   echo ' <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                   <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                   </li>
                                    
-                                   echo " </ul>";
-                                   echo " </div>";
-                                   echo "</div>";
+                                   </ul>
+                                   </div>
+                                  </div>
                         
-                                   echo " </div>";
-                                   echo " <div class="row">";
-                        echo "<div class="col-md-4">";
+                                   </div>
+                                   <div class="row">
+                       <div class="col-md-4">';
                             
-                       echo" </div>";
-                        echo "<div class="col-md-8">";
-                            echo "<div class="tab-content profile-tab" id="myTabContent">";
-                                echo "<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">";
-                                    echo "<div class="row">";
-                                        echo "<div class="col-md-6">";
-                                        echo " <label>admin id</label>";
-                                        echo"</div>";
+                        echo ' </div>
+                       <div class="col-md-8">
+                           <div class="tab-content profile-tab" id="myTabContent">
+                               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                        <label>admin id</label>
+                                        </div>';
                                         echo '<div class="col-md-6">' .$rs['emp_id']. '</div>';
-                                          echo " </div>";
-                                          echo " </div>";
-                                    echo "<div class="row">";
-                                        echo "<div class="col-md-6">";
-                                        echo "  <label>Name</label>";
-                                            echo " </div>";
-                                        echo "<div class="col-md-6">";
-                                        echo " <p> ADMIN</p>";
-                                        echo "  </div>";
-                                        echo " </div>";
-                                    echo "<div class="row">";
-                                        echo "<div class="col-md-6">";
-                                        echo "  <label>password</label>";
-                                        echo " </div>";
+                                         echo ' </div>
+                                          </div>
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                         <label>Name</label>
+                                            </div>
+                                       <div class="col-md-6">
+                                        <p> ADMIN</p>
+                                         </div>
+                                        </div>
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                         <label>password</label>
+                                        </div>';
                                         echo '<div class="col-md-6 '.$rs['password']. ' </div>';
-                                      echo "</div>";
-                                    echo "<div class="row">";
-                                        echo "<div class="col-md-6">";
-                                        echo "<label>Phone</label>";
-                                        echo " </div>";
-                                        echo "<div class="col-md-6">";
-                                        echo " <p>123 456 7890</p>";
-                                        echo "</div>";
-                                        echo " </div>";
-                                    echo "<div class="row">";
-                                        echo "<div class="col-md-6">";
-                                            <label>";Designation</label>";
-                                        </div>";
-                                        echo "<div class="col-md-6">";
-                                        echo " <p>Head Manager</p>";
-                                        echo " </div>";
-                                        echo " </div>";
-                                        echo "</div>";
-                                        echo " </div>";
-                                        echo " </div>";
-                                        echo " </div>";
-                                        echo " </form>";
-                                        echo " </div>";
+                                     echo'</div>
+                                   <div class="row">
+                                        <div class="col-md-6">
+                                        <label>Phone</label>
+                                         </div>
+                                        <div class="col-md-6">';
+                                         echo'<p>'.$rs['mob_no'].'</p>';
+                                       echo' </div>
+                                         </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Designation</label>
+                                        </div>
+                                        <div class="col-md-6">';
+                                        echo' <p>'.$rs['designation'].'</p>';
+                                        echo' </div>
+                                         </div>
+                                        </div>
+                                         </div>
+                                         </div>
+                                         </div>
+                                         </form>
+                                         </div>';
                                     };
                                     ?>
 
