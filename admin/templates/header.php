@@ -11,9 +11,26 @@
 
     <div class="d-flex align-items-center justify-content-between">
     <i class="bi bi-list toggle-sidebar-btn"></i>
-      <a href="https://www.cmpdi.co.in/index.php?lang=Eng" class="logo d-flex align-items-center">
-        <img class ="h-img" src="assets/img/android-chrome.png" alt="cmpdi logo">
-      </a>
+    <?php
+        include "./conn.php";
+        $sl = 1;
+        $sql = "select * from employee where emp_id ='$cid'";
+        $smt = mysqli_query($conn, $sql);
+        while ($rs = mysqli_fetch_assoc($smt)) {
+          if($rs['admin']=='yes')
+          {
+            echo '<a href="./dashboard_admin.php" class="logo d-flex align-items-center">
+            <img class ="h-img" src="assets/img/android-chrome.png" alt="cmpdi logo">
+            </a>';
+          }
+          else
+          {
+            echo '<a href="./dashboard.php" class="logo d-flex align-items-center">
+            <img class ="h-img" src="assets/img/android-chrome.png" alt="cmpdi logo">
+            </a>';
+          }
+        };
+      ?>
     </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">
