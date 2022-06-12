@@ -72,8 +72,9 @@ $rs=mysqli_fetch_assoc($smt);
                                     {
                                         echo '<div class="col-md-6">
                                         <div class="profile-head">
-                                            <h5>'.$rs['emp_id'].'</h5>
-                                            <h6>'.$rs['designation'].'</h6>
+                                            <h5>'.$rs['emp_name'].'</h5>';
+                                            if($rs['admin']=='yes')echo '<h6>(admin)</h6>';
+                                        echo '<h6>'.$rs['designation'].'</h6>
                                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                                 <li class="nav-item">
                                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -90,7 +91,7 @@ $rs=mysqli_fetch_assoc($smt);
                                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <label>admin id</label>
+                                                            <label>Employee Id</label>
                                                         </div>
                                                         <div class="col-md-6">'.$rs['emp_id'].'</div>
                                                     </div>
@@ -99,7 +100,7 @@ $rs=mysqli_fetch_assoc($smt);
                                                             <label>Name</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <p> ADMIN</p>
+                                                            <p>'.$rs['emp_name'].'</p>
                                                         </div>
                                                     </div>
                                                     

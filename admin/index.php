@@ -48,10 +48,10 @@ $(document).ready(function(){
 				 var x=parseInt(data);
 				 if(x==1)
 				 {
-				 window.location="./dashboard.php";
+				 window.location="./dashboard_admin.php";
 				 }
          else if(x==0){
-          window.location="./data.php";
+          window.location="./dashboard.php";
          }
 				 else
 				 { 
