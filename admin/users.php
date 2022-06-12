@@ -35,7 +35,7 @@
 <body>
 
 <?php include("./templates/header.php") ?>
-<?php include("./templates/sidebar_admin.php") ?>
+<?php include("./templates/sidebar.php") ?>
 
   <main id="main" class="main">
 

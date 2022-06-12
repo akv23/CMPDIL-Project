@@ -65,7 +65,6 @@
         var name = $("#txtName").val();
         var email = $("#txtemail").val();
         var mobile = $("#txtMobile").val();
-        var role = $("#txtRole").val();
         var eid = $("#txtId").val();
         var password= $("#txtPass").val();
         var admin = $("#txtAdmin").val();
@@ -80,7 +79,6 @@
             'name': name,
             'mobile': mobile,
             'designation': designation,
-            'role': role,
             'password':password,
             'eid': eid,
             'admin': admin,
@@ -96,7 +94,6 @@
             $("#txtName").val("");
             $("#txtMobile").val("");
             $("#txtDesi").val("");
-            $("#txtRole").val("");
             $("#txtAdmin").val("");
             $("#txtPass").val("");
             $("#txtCid").focus();
@@ -114,7 +111,7 @@
 <body>
 
   <?php include("./templates/header.php") ?>
-  <?php include("./templates/sidebar_admin.php") ?>
+  <?php include("./templates/sidebar.php") ?>
 
   <main id="main" class="main">
 
@@ -148,21 +145,15 @@
               DESIGNATION
               <!-- <input class="form-control" placeholder="Enter Designation" name="txtDesi" id="txtDesi" type="text" /> -->
               <select class="form-control" name="txtDesi" id="txtDesi">
-                <option value="MT">MT</option>
-                <option value="AM">AM</option>
-                <option value="DM">DM</option>
-                <option value="M">M</option>
-                <option value="SM">SM</option>
-                <option value="CM">CM</option>
-                <option value="GM">GM</option>
+                <option value="Management Trainee">Management Trainee</option>
+                <option value="Assistant Manager">Assistant Manager</option>
+                <option value="Deputy Manager">Deputy Manager</option>
+                <option value="Manager">Manager</option>
+                <option value="Senior Manager">Senior Manager</option>
+                <option value="Chief Manager">Chief Manager</option>
+                <option value="General Manager">General Manager</option>
                 <option value="HOD">HOD</option>
               </select>
-            </div>
-
-            <div id="error_disp_register"></div>
-            <div class="form-group">
-              ROLE
-              <input class="form-control" placeholder="Enter Role" name="txtRole" id="txtRole" type="text" />
             </div>
           </div>
           <div class="col-6">

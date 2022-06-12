@@ -1,4 +1,11 @@
 <?php include("auth.php");?>
+<?php
+include "./conn.php";
+									
+$sql="select * from employee";
+$smt=mysqli_query($conn,$sql);
+$rs=mysqli_fetch_assoc($smt);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +13,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - Admin</title>
+  <title>Dashboard</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -35,27 +42,36 @@
 <body>
 
 <?php include("./templates/header.php") ?>
-<?php include("./templates/sidebar_admin.php") ?>
+<?php include("./templates/sidebar.php") ?>
 
   <main id="main" class="main">
 
     <div class="pagetitle">
       <h1>Dashboard</h1>
     </div><!-- End Page Title -->
+    <?php 
+                                    include "./conn.php";
+									
+                                    
+                                    $sql="select * from employee";
+                                    $smt=mysqli_query($conn,$sql);
+                                    while($rs=mysqli_fetch_assoc($smt)){
+                                     echo' <section class="section dashboard">';
+                                  
+                                          echo '<div class="card mx-5">
+                                            <div class="card-body p-2 px-5 d-flex justify-content-between">
+                                              <span>'.$rs['emp_name'].'</span>
+                                              <span>'.$rs['duty_day'].'</span>
+                                            </div>
+                                          </div>';
+                                        }
+                                    
+                                    '</section>
+                                  </main>';
 
-    <section class="section dashboard">
-      <?php 
-        for($i=0; $i<5; $i++){
-          echo '<div class="card mx-5">
-            <div class="card-body p-2 px-5 d-flex justify-content-between">
-              <span>date</span>
-              <span>name</span>
-            </div>
-          </div>';
-        }
-      ?>
-    </section>
-  </main><!-- End #main -->
+                                    
+                                    ?>
+   <!-- End #main -->
   <div class="fixed-bottom bg-light">
     <?php include("./templates/footer.php") ?>
   </div>
