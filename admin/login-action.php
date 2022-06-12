@@ -1,5 +1,5 @@
 <?php session_start();
-require "../conn.php";
+require "./conn.php";
 if($_POST['email'] && $_POST['password'])
 {
 	$email=$_POST['email'];
