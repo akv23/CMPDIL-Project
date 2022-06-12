@@ -44,16 +44,39 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-      <!-- <?php 
-        for($i=0; $i<5; $i++){
-          echo '<div class="card mx-5">
-            <div class="card-body p-2 px-5 d-flex justify-content-between">
-              <span>date</span>
-              <span>name</span>
-            </div>
-          </div>';
-        }
-      ?> -->
+      
+        <?php
+          
+            
+            $connection = new mysqli("localhost","root","","cmpdi");
+      
+            if ($connection->connect_error) {
+              die("Connection failed: " . $connection->connect_error);
+            }
+              
+			    $sql = "SELECT * FROM employee";
+			    $result = $connection->query($sql);
+
+              if (!$result) {
+			  	die("Invalid query: " . $connection->error);
+			  }
+
+            // read data of each row
+			  while($row = $result->fetch_assoc()) {
+                
+                
+                echo '
+                  <div class="card mx-5">
+                    <div class="card-body p-2 px-5 d-flex justify-content-between">
+                      <span>' . $row["emp_name"] . '</span>
+                    </div>
+                  </div>';
+            }
+
+            $connection->close();
+            ?>
+        
+      
     </section>
   </main><!-- End #main -->
   <div class="fixed-bottom bg-light">

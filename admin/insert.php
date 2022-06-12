@@ -16,8 +16,11 @@ if($action=="registration")
 	 $desi=$_POST['designation'];
      $email=$_POST['email'];
      $role=$_POST['role'];
+<<<<<<< HEAD
+=======
      $eid=$_POST['eid'];
      $admin=$_POST['admin'];
+>>>>>>> 396249fb06f44f60b08ccbb773d27c785b617f5e
 	 require("./conn.php");
      
 			
