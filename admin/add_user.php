@@ -33,11 +33,10 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- //bootstrap-css -->
   <!-- Custom CSS -->
-  <link href="css/style.css" rel='stylesheet' type='text/css' />-->
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
   <link href="css/style-responsive.css" rel="stylesheet" />
   <!-- font CSS -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -118,12 +117,11 @@
   <?php include("./templates/sidebar.php") ?>
 
   <main id="main" class="main">
-    
 
     <div class="pagetitle">
       <h1>Add User</h1>
     </div><!-- End Page Title -->
-    <div class="justify-content-center  emp-profile shadow" style="margin-bottom: 10%; border-radius: 0.5rem;">
+    <div class="justify-content-center  emp-profile shadow" style="margin-bottom: 10%;">
       <div>
         <center>
           <div class="d-flex justify-content-center py-4">
@@ -150,14 +148,14 @@
               DESIGNATION
               <!-- <input class="form-control" placeholder="Enter Designation" name="txtDesi" id="txtDesi" type="text" /> -->
               <select class="form-control" name="txtDesi" id="txtDesi">
-                <option value="1">MT</option>
-                <option value="2">AM</option>
-                <option value="3">DM</option>
-                <option value="4">M</option>
-                <option value="5">SM</option>
-                <option value="6">CM</option>
-                <option value="7">GM</option>
-                <option value="8">HOD</option>
+                <option value="MT">MT</option>
+                <option value="AM">AM</option>
+                <option value="DM">DM</option>
+                <option value="M">M</option>
+                <option value="SM">SM</option>
+                <option value="CM">CM</option>
+                <option value="GM">GM</option>
+                <option value="HOD">HOD</option>
               </select>
             </div>
 
@@ -175,26 +173,23 @@
             <div class="col-6">
             <div class="form-group">
               Password
-              <input class="form-control" placeholder="Enter Paasword" name="txtPass" id="txtPass" type="text" />
+              <input class="form-control" placeholder="Enter Paasword" name="txtPass" id="txtPass" type="password" />
             </div>
-            <div class="form-group">
-              Password
-              <input class="form-control" placeholder="Enter Password" name="txtpass" id="txtpass" type="password" />
-            </div>
-            <!-- <div class="form-group">
+          
+             <div class="form-group">
             Allow Admin Control<br>
               <input class="form-control" placeholder="yes or no" name="txtemail" id="txtAdmin" type="text" />
-            </div> -->
-            <div class="form-group">
+            </div> 
+           <!-- <div class="form-group">
               Allow Admin Control<br>
               <div class="mt-2">
-                <input class="form-check-input" type="radio" name="radio" id="radio" value="Yes"> Yes
+                <input class="form-check-input" type="radio" name="radio txtAdmin" id="radio" value="Yes"> Yes
                 <!-- <label class="form-check-label" for="flexRadioDefault1"> -->
                 <!-- Yes -->
                 <!-- </label> -->
                 <!-- </div> -->
                 <!-- <div class="form-check form-check-inline mt-2"> -->
-                <input class="form-check-input ms-5" type="radio" name="radio" id="radio" value="No" checked> No
+              <!--  <input class="form-check-input ms-5" type="radio" name="radio" id="radio txtAdmin" value="No" checked> No
                 <!-- <label class="form-check-label" for="flexRadioDefault2"> -->
                 <!-- No -->
                 <!-- </label> -->
