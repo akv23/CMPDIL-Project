@@ -3,7 +3,7 @@
 $cid=$_SESSION['email'];
 include "./conn.php";
 									
-$sql="select * from tbl_portal_admin";
+$sql="select * from employee";
 $smt=mysqli_query($conn,$sql);
 $rs=mysqli_fetch_assoc($smt);
 ?>
@@ -72,7 +72,7 @@ $rs=mysqli_fetch_assoc($smt);
 									
 									
                                     $sl=1;
-                                    $sql="select * from tbl_portal_admin where userid ='$cid'";
+                                    $sql="select * from employee where emp_id ='$cid'";
                                     $smt=mysqli_query($conn,$sql);
                                     while($rs=mysqli_fetch_assoc($smt))
                                     {
@@ -80,7 +80,7 @@ $rs=mysqli_fetch_assoc($smt);
                                         echo "<div class="col-md-6">";
                                         echo "<div class="profile-head">";
                                         echo "<h5>";
-                                   echo " .$rs['userid']."
+                                   echo " .$rs['emp_id']."
                                    echo "</h5>";
                                    echo "<h6>";
                                    echo " Head Manager"
