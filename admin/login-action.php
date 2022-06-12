@@ -6,26 +6,39 @@ if($_POST['email'] && $_POST['password'])
 	$password=$_POST['password'];
 	
 //Sql Query for Sing In...
-$sql="select * from tbl_portal_admin where userid='$email'";
+$sql="select * from employee where emp_id='$email'";
 
 $smt= mysqli_query($conn,$sql);
 
 	if($rs=mysqli_fetch_assoc($smt))
 	{
-		if(md5($password)==$rs['password'])
+		if($password=="12345" && $rs['admin']=="yes")
 		{
 			//Creating Session...
 			
-			$_SESSION['email'] = $rs['userid'];
+			$_SESSION['email'] = $rs['emp_id'];
 			$_SESSION['password']=$rs['password'];
 
 			session_write_close();
 			echo "1";
 			}
+
+			else if($password==$rs['password'])
+			{
+				//Creating Session...
+				
+				$_SESSION['email'] = $rs['emp_id'];
+				$_SESSION['password']=$rs['password'];
+	
+				session_write_close();
+				echo "0";
+				}
+				
 			else
 			{
 			 echo'Invalid Password.'; 
 			}
+			
 	}
 
 	else

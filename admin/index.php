@@ -50,6 +50,9 @@ $(document).ready(function(){
 				 {
 				 window.location="./dashboard.php";
 				 }
+         else if(x==0){
+          window.location="./data.php";
+         }
 				 else
 				 { 
 				  $("#btnLogin").html("Login");
@@ -93,10 +96,10 @@ $(document).ready(function(){
                   <form class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
+                      <label for="yourUsername" class="form-label">Employee Id</label>
                       <div class="input-group has-validation">
                         <input type="text" id="txtUserName" name="txtUserName" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
+                        <div class="invalid-feedback">Please enter your Emp_id.</div>
                       </div>
                     </div>
 
@@ -104,6 +107,7 @@ $(document).ready(function(){
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" id="txtPassword" name="txtPassword" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
+                      <p>your password is 00 + emp_id</p>
                     </div>
 
                     <div class="col-12">
