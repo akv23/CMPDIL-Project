@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 11:03 AM
+-- Generation Time: Jun 12, 2022 at 10:06 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -26,33 +26,6 @@ USE `cmpdi`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `designation`
---
-
-DROP TABLE IF EXISTS `designation`;
-CREATE TABLE `designation` (
-  `designation_id` int(10) NOT NULL,
-  `designation` varchar(50) NOT NULL,
-  `role` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `designation`
---
-
-INSERT INTO `designation` (`designation_id`, `designation`, `role`) VALUES
-(1, 'HOD', 'HEAD OF DEPARTMENT'),
-(2, 'GM', 'GENERAL MANAGER'),
-(3, 'CM', 'CHIEF MANAGER'),
-(4, 'SM', 'SENIOR MANAGER'),
-(5, 'M', 'MANAGER'),
-(6, 'DM', 'DEPUTY MANAGER'),
-(7, 'AM', 'ASSISTANT MANAGER'),
-(8, 'MT', 'MANAGEMENT TRAINEE');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `employee`
 --
 
@@ -60,6 +33,7 @@ DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
   `emp_id` int(16) NOT NULL,
   `emp_name` varchar(50) NOT NULL,
+  `password` varchar(14) NOT NULL,
   `mob_no` varchar(15) NOT NULL,
   `designation` varchar(50) NOT NULL,
   `role` varchar(40) NOT NULL,
@@ -75,96 +49,19 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`emp_id`, `emp_name`, `mob_no`, `designation`, `role`, `email`, `duty_day`, `create_date`, `update_date`, `last_login_date`, `admin`) VALUES
-(97, 'sakshi', '0987654321', 'hod', 'head', 'sakshiswati33@gmail.', '', '2022-06-11', '2022-06-11', '2022-06-11 08:13:03', 'yes');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-DROP TABLE IF EXISTS `login`;
-CREATE TABLE `login` (
-  `login_id` int(10) NOT NULL,
-  `emp_name` varchar(50) NOT NULL,
-  `mob_no` varchar(14) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `password` varchar(10) NOT NULL,
-  `register_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `login`
---
-
-INSERT INTO `login` (`login_id`, `emp_name`, `mob_no`, `email`, `password`, `register_date`) VALUES
-(6, 'sakshi', '0987654321', 'sakshiswati33@gmail.com', '12345', '2022-06-11 08:10:50');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_portal_admin`
---
-
-DROP TABLE IF EXISTS `tbl_portal_admin`;
-CREATE TABLE `tbl_portal_admin` (
-  `userid` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_portal_admin`
---
-
-INSERT INTO `tbl_portal_admin` (`userid`, `password`, `status`) VALUES
-('admin', 'e10adc3949ba59abbe56e057f20f883e', 'active');
+INSERT INTO `employee` (`emp_id`, `emp_name`, `password`, `mob_no`, `designation`, `role`, `email`, `duty_day`, `create_date`, `update_date`, `last_login_date`, `admin`) VALUES
+(76, 'saki', '0076', '9987654321', 'm', 'manager', 'sakshiswati33@gmail.', '', '2022-06-12', '2022-06-12', '2022-06-12 07:39:07', 'yes');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `designation`
---
-ALTER TABLE `designation`
-  ADD PRIMARY KEY (`designation_id`);
-
---
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`emp_id`);
-
---
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`login_id`),
-  ADD UNIQUE KEY `mob_no` (`mob_no`);
-
---
--- Indexes for table `tbl_portal_admin`
---
-ALTER TABLE `tbl_portal_admin`
-  ADD PRIMARY KEY (`userid`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `designation`
---
-ALTER TABLE `designation`
-  MODIFY `designation_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `login_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  ADD PRIMARY KEY (`emp_id`),
+  ADD UNIQUE KEY `password` (`password`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -65,6 +65,7 @@
         var mobile = $("#txtMobile").val();
         var role = $("#txtRole").val();
         var eid = $("#txtId").val();
+        var password= $("#txtPass").val();
         var admin = $("#txtAdmin").val();
 
 
@@ -78,6 +79,7 @@
             'mobile': mobile,
             'designation': designation,
             'role': role,
+            'password':password,
             'eid': eid,
             'admin': admin,
           },
@@ -94,6 +96,7 @@
             $("#txtDesi").val("");
             $("#txtRole").val("");
             $("#txtAdmin").val("");
+            $("#txtPass").val("");
             $("#txtCid").focus();
 
           }
@@ -154,6 +157,11 @@
             <div class="form-group">
               Employee ID
               <input class="form-control" placeholder="Enter Employee ID" name="txtId" id="txtId" type="text" />
+            </div>
+            <div class="col-6">
+            <div class="form-group">
+              Password
+              <input class="form-control" placeholder="Enter Paasword" name="txtPass" id="txtPass" type="text" />
             </div>
             <div class="form-group">
               ADMIN

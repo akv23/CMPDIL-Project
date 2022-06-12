@@ -1,8 +1,9 @@
+
 <?php session_start(); 
-$cid=$_SESSION['cid'];
+$cid=$_SESSION['email'];
 include "./conn.php";
 									
-$sql="select * from employee where mob_no='$cid'";
+$sql="select * from employee where emp_id ='$cid'";
 $smt=mysqli_query($conn,$sql);
 $rs=mysqli_fetch_assoc($smt);
 ?>
@@ -12,7 +13,7 @@ $rs=mysqli_fetch_assoc($smt);
 <html lang="zxx">
 
 <head>
-    <title>chhatralay : For Hostels , Fooding , Hotels</title>
+    <title>CMPDI _EMPLOYEE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="keywords" content="Lite Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -55,6 +56,8 @@ $rs=mysqli_fetch_assoc($smt);
                        <td>Mobile No</td>
                        <td>Designation</td>
                        <td>role</td>
+                       <td>password</td>
+                       <td>Duty day</td>
                        <td>Admin</td>
                        <td></td>
                        <td></td>
@@ -64,7 +67,7 @@ $rs=mysqli_fetch_assoc($smt);
 									
 									
                                     $sl=1;
-                                    $sql="select * from employee where mob_no='$cid'";
+                                    $sql="select * from employee where emp_id='$cid'";
                                     $smt=mysqli_query($conn,$sql);
                                     while($rs=mysqli_fetch_assoc($smt))
                                     {
@@ -75,6 +78,7 @@ $rs=mysqli_fetch_assoc($smt);
                                          echo "<td>".$rs['mob_no']."</td>";
                                          echo "<td>".$rs['designation']."</td>";
                                          echo "<td>".$rs['role']."</td>";
+                                         echo "<td>".$rs['password']."</td>";
                                          echo "<td>".$rs['admin']."</td>";
                                         
                                       echo "</tr>";  
