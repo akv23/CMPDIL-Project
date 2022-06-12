@@ -60,8 +60,8 @@ $rs=mysqli_fetch_assoc($smt);
                                   
                                           echo '<div class="card mx-5">
                                             <div class="card-body p-2 px-5 d-flex justify-content-between">
-                                              <span>'.$rs['emp_id'].'</span>
                                               <span>'.$rs['emp_name'].'</span>
+                                              <span>'.$rs['duty_day'].'</span>
                                             </div>
                                           </div>';
                                         }
