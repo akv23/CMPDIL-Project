@@ -69,8 +69,34 @@
                   <div class="card mx-5">
                     <div class="card-body p-2 px-5 d-flex justify-content-between">
                       <span>' . $row["emp_name"] . '</span>
+                      
+                      <span>
+                        <input type="date" name="dateofduty" class="form-control" />
+                      </span>
+                      <span>
+                        <button type="submit" name="save_date" class="btn btn-primary">Save Data</button>
+                      </span>
                     </div>
                   </div>';
+            }
+            if(isset($_POST['save_date']))
+              {
+                
+                $duty_day = date('Y-m-d', strtotime($_POST['dateofduty']));
+
+                $query = "INSERT INTO employee (duty_day) VALUES ('$duty_day')";
+                $query_run = mysqli_query($connection, $query);
+
+                if($query_run)
+                {
+                    $_SESSION['status'] = "Date values Inserted";
+                    header("Location: assign_duty.php");
+                }
+                else
+                {
+                    $_SESSION['status'] = "Date values Inserting Failed";
+                    header("Location: assign_duty.php");
+                }
             }
 
             $connection->close();
