@@ -1,4 +1,4 @@
-
+<?php include("auth.php"); ?>
 <?php session_start(); 
 $cid=$_SESSION['email'];
 include "./conn.php";
@@ -58,7 +58,7 @@ $rs=mysqli_fetch_assoc($smt);
 
         <section class="content-body body-sign">
 
-            <div class="container emp-profile shadow p-3 mb-5 bg-body" style="border-radius: 0.5rem;">
+            <div class="container emp-profile shadow p-3 mb-5 bg-body">
                 <form method="post">
                     <div class="row">
                         <?php 
@@ -71,6 +71,7 @@ $rs=mysqli_fetch_assoc($smt);
                                     while($rs=mysqli_fetch_assoc($smt))
                                     {
              
+<<<<<<< HEAD
                                         echo '<div class="col-md-6">
                                         <div class="profile-head">
                                             <h5> '.$rs['emp_id']. '</h5>
@@ -126,6 +127,80 @@ $rs=mysqli_fetch_assoc($smt);
                                     </div>
                                     </form>
                                     </div>';
+=======
+                                        echo "<div class="col-md-6">";
+                                        echo "<div class="profile-head">";
+                                        echo "<h5>";
+                                   echo " .$rs['emp_id']."
+                                   echo "</h5>";
+                                   echo "<h6>";
+                                   echo " Head Manager"
+                                   echo " </h6>";
+                                   echo "<p class="proile-rating">"; YEAR EXPERIENCE : <span>";10</span>";</p>";
+                                   echo " <ul class="nav nav-tabs" id="myTab" role="tablist">";
+                                   echo " <li class="nav-item">";
+                                   echo "  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>";
+                                   echo " </li>";
+                                   
+                                   echo " </ul>";
+                                   echo " </div>";
+                                   echo "</div>";
+                        
+                                   echo " </div>";
+                                   echo " <div class="row">";
+                        echo "<div class="col-md-4">";
+                            
+                       echo" </div>";
+                        echo "<div class="col-md-8">";
+                            echo "<div class="tab-content profile-tab" id="myTabContent">";
+                                echo "<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">";
+                                    echo "<div class="row">";
+                                        echo "<div class="col-md-6">";
+                                        echo " <label>admin id</label>";
+                                        </div>";
+                                        echo "<div class="col-md-6">";
+                                          echo ".$rs['userid']." 
+                                          echo " </div>";
+                                          echo " </div>";
+                                    echo "<div class="row">";
+                                        echo "<div class="col-md-6">";
+                                        echo "  <label>Name</label>";
+                                            echo " </div>";
+                                        echo "<div class="col-md-6">";
+                                        echo " <p> ADMIN</p>";
+                                        echo "  </div>";
+                                        echo " </div>";
+                                    echo "<div class="row">";
+                                        echo "<div class="col-md-6">";
+                                        echo "  <label>password</label>";
+                                        echo " </div>";
+                                        echo "<div class="col-md-6">";
+                                      echo "  .$rs['password']."
+                                      echo "  </div>";
+                                      echo "</div>";
+                                    echo "<div class="row">";
+                                        echo "<div class="col-md-6">";
+                                        echo "<label>Phone</label>";
+                                        echo " </div>";
+                                        echo "<div class="col-md-6">";
+                                        echo " <p>123 456 7890</p>";
+                                        echo "</div>";
+                                        echo " </div>";
+                                    echo "<div class="row">";
+                                        echo "<div class="col-md-6">";
+                                            <label>";Designation</label>";
+                                        </div>";
+                                        echo "<div class="col-md-6">";
+                                        echo " <p>Head Manager</p>";
+                                        echo " </div>";
+                                        echo " </div>";
+                                        echo "</div>";
+                                        echo " </div>";
+                                        echo " </div>";
+                                        echo " </div>";
+                                        echo " </form>";
+                                        echo " </div>";
+>>>>>>> 4bab9bd12b11791900e2b17f6332fcc84a7fdc3b
                                     };
                                     ?>
 
