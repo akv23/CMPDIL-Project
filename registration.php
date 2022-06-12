@@ -10,6 +10,7 @@
 <!-- bootstrap-css -->
 <link rel="stylesheet" href="css/bootstrap.min.css" >
 <!-- //bootstrap-css -->
+<link rel="stylesheet" href="user_style.css">
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="css/style-responsive.css" rel="stylesheet"/>

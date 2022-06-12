@@ -13,8 +13,8 @@ if($action=="registration")
 	 $name=$_POST['name'];
 	 $mobile=$_POST['mobile'];
 	 $desi=$_POST['designation'];
-   $email=$_POST['email'];
-   $role=$_POST['role'];
+     $email=$_POST['email'];
+     $role=$_POST['role'];
 	 require("./conn.php");
      
 			

@@ -7,7 +7,4 @@ $conn =mysqli_connect("localhost","root","","cmpdi");
 		exit();
 	}
 
-
-
-
 ?>

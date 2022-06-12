@@ -33,10 +33,11 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- //bootstrap-css -->
   <!-- Custom CSS -->
-  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/style.css" rel='stylesheet' type='text/css' />-->
   <link href="css/style-responsive.css" rel="stylesheet" />
   <!-- font CSS -->
-  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -106,11 +107,12 @@
   <?php include("./templates/sidebar.php") ?>
 
   <main id="main" class="main">
+    
 
     <div class="pagetitle">
       <h1>Add User</h1>
     </div><!-- End Page Title -->
-    <div class="justify-content-center  emp-profile shadow" style="margin-bottom: 10%;">
+    <div class="justify-content-center  emp-profile shadow" style="margin-bottom: 10%; border-radius: 0.5rem;">
       <div>
         <center>
           <div class="d-flex justify-content-center py-4">
