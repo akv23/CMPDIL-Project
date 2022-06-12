@@ -1,4 +1,4 @@
-<?php include("auth.php"); ?>
+
 <?php session_start(); 
 $cid=$_SESSION['email'];
 include "./conn.php";
@@ -77,15 +77,14 @@ $rs=mysqli_fetch_assoc($smt);
                                     while($rs=mysqli_fetch_assoc($smt))
                                     {
              
-                                        echo "<div class="col-md-6">";
-                                        echo "<div class="profile-head">";
-                                        echo "<h5>";
-                                   echo " .$rs['emp_id']."
-                                   echo "</h5>";
+                                        echo '<div class="col-md-6">';
+                                        echo '<div class="profile-head">';
+                                        echo "<h5>" .$rs['emp_id'].  "</h5>";
                                    echo "<h6>";
                                    echo " Head Manager"
                                    echo " </h6>";
-                                   echo "<p class="proile-rating">"; YEAR EXPERIENCE : <span>";10</span>";</p>";
+                                   echo "<p class="proile-rating">"; 
+                                   <p>YEAR EXPERIENCE : <span>";10</span>";</p>";
                                    echo " <ul class="nav nav-tabs" id="myTab" role="tablist">";
                                    echo " <li class="nav-item">";
                                    echo "  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>";
@@ -106,9 +105,8 @@ $rs=mysqli_fetch_assoc($smt);
                                     echo "<div class="row">";
                                         echo "<div class="col-md-6">";
                                         echo " <label>admin id</label>";
-                                        </div>";
-                                        echo "<div class="col-md-6">";
-                                          echo ".$rs['userid']." 
+                                        echo"</div>";
+                                        echo '<div class="col-md-6">' .$rs['emp_id']. '</div>';
                                           echo " </div>";
                                           echo " </div>";
                                     echo "<div class="row">";
@@ -123,9 +121,7 @@ $rs=mysqli_fetch_assoc($smt);
                                         echo "<div class="col-md-6">";
                                         echo "  <label>password</label>";
                                         echo " </div>";
-                                        echo "<div class="col-md-6">";
-                                      echo "  .$rs['password']."
-                                      echo "  </div>";
+                                        echo '<div class="col-md-6 '.$rs['password']. ' </div>';
                                       echo "</div>";
                                     echo "<div class="row">";
                                         echo "<div class="col-md-6">";
