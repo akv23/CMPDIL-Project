@@ -61,12 +61,6 @@ $rs=mysqli_fetch_assoc($smt);
             <div class="container emp-profile shadow p-3 mb-5 bg-body">
                 <form method="post">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-img">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="" />
-    
-                            </div>
-                        </div>
                         <?php 
                                     include "./conn.php";
 									
