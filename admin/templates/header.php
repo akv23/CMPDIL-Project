@@ -1,4 +1,12 @@
   <!-- ======= Header ======= -->
+  <?php 
+    $cid=$_SESSION['email'];
+    include "./conn.php";
+                      
+    $sql="select * from employee";
+    $smt=mysqli_query($conn,$sql);
+    $rs=mysqli_fetch_assoc($smt);
+  ?>
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -20,13 +28,33 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="https://png.pngtree.com/png-vector/20191125/ourmid/pngtree-beautiful-admin-roles-line-vector-icon-png-image_2035379.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+            <?php
+              include "./conn.php";
+
+
+              $sl = 1;
+              $sql = "select * from employee where emp_id ='$cid'";
+              $smt = mysqli_query($conn, $sql);
+              while ($rs = mysqli_fetch_assoc($smt)) {
+                  echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$rs['emp_name'].'</span>';
+              };
+              ?>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Admin</h6>
-              <span>Manager</span>
+            <?php
+              include "./conn.php";
+
+
+              $sl = 1;
+              $sql = "select * from employee where emp_id ='$cid'";
+              $smt = mysqli_query($conn, $sql);
+              while ($rs = mysqli_fetch_assoc($smt)) {
+                  echo '  <h6>'.$rs['emp_name'].'</h6>
+                          <span>'.$rs['designation'].'</span>';
+              };
+            ?>
             </li>
             <li>
               <hr class="dropdown-divider">
