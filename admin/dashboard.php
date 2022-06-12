@@ -57,8 +57,7 @@ $rs=mysqli_fetch_assoc($smt);
                                     $smt=mysqli_query($conn,$sql);
                                     while($rs=mysqli_fetch_assoc($smt)){
                                      echo' <section class="section dashboard">';
-                                      
-                                        for($i=0; $i<5; $i++){
+                                  
                                           echo '<div class="card mx-5">
                                             <div class="card-body p-2 px-5 d-flex justify-content-between">
                                               <span>'.$rs['emp_id'].'</span>
@@ -67,10 +66,10 @@ $rs=mysqli_fetch_assoc($smt);
                                           </div>';
                                         }
                                     
-                                    echo'</section>
+                                    '</section>
                                   </main>';
 
-                                    }
+                                    
                                     ?>
    <!-- End #main -->
   <div class="fixed-bottom bg-light">
