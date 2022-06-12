@@ -45,14 +45,23 @@
 
     <section class="section dashboard">
       <?php 
-        for($i=0; $i<5; $i++){
-          echo '<div class="card mx-5">
-            <div class="card-body p-2 px-5 d-flex justify-content-between">
-                <span>name</span>
-                <span>date</span>
-            </div>
-          </div>';
-        }
+        include "./conn.php";
+									
+                                    
+        $sql="select * from employee";
+        $smt=mysqli_query($conn,$sql);
+        while($rs=mysqli_fetch_assoc($smt)){
+         echo' <section class="section dashboard">';
+      
+              echo '<div class="card mx-5">
+                <div class="card-body p-2 px-5 d-flex justify-content-between">
+                  <span>'.$rs['emp_name'].'</span>
+                  <span>'.$rs['emp_id'].'</span>
+                </div>
+              </div>';
+            }
+        
+        '</section>';
       ?>
     </section>
   </main><!-- End #main -->
