@@ -107,7 +107,7 @@ $(document).ready(function(){
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" id="txtPassword" name="txtPassword" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
-                      <p>your password is 00 + emp_id</p>
+                      <p>Emp id + 100 is your First Time Password (like empid is 20 then password is 20100)</p>
                     </div>
 
                     <div class="col-12">
