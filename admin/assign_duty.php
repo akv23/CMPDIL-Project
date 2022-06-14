@@ -1,4 +1,5 @@
-<?php include("auth.php");?>
+<?php include("auth.php"); ?>
+<html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,89 +30,125 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- bootstrap-css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- //bootstrap-css -->
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/style-responsive.css" rel="stylesheet" />
+  <!-- font CSS -->
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  
+
+  <script>
+   
+    $(document).ready(function() {
+
+
+
+      //Admin Login Start.....
+      $("#btnRegister").click(function() {
+
+        
+        var emp= $("#emp").val();
+        var dateofduty = $("#dateofduty").val();
+
+
+        $.ajax({
+          type: 'post',
+          url: 'date.php',
+          data: {
+            'action': 'registration',
+            'emp': emp,
+            'dateofduty': dateofduty,
+        
+          },
+          success: function(data) {
+
+            alert(data);
+            $("#btnRegister").html("Assign");
+            $("#error_disp_register").html(data);
+            $("#error_disp_register").slideDown("slow");
+            $("#error_disp_register").slideUp(8000);
+            $("#emp").val("");
+            $("#dateofduty").val("");
+
+          }
+
+        });
+
+      });
+      //Admin Login End.....
+    });
+  </script>
+  
 </head>
 
 <body>
 
-<?php include("./templates/header.php") ?>
-<?php include("./templates/sidebar.php") ?>
+  <?php include("./templates/header.php") ?>
+  <?php include("./templates/sidebar.php") ?>
+  
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Assign Duty</h1>
+      <h1>Assign Date</h1>
     </div><!-- End Page Title -->
-
-    <section class="section dashboard">
+   
+        <section class="section dashboard">
       
-        <?php
-          
-            
-            $connection = new mysqli("localhost","root","","cmpdi");
-      
-            if ($connection->connect_error) {
-              die("Connection failed: " . $connection->connect_error);
-            }
-              
-			    $sql = "SELECT * FROM employee";
-			    $result = $connection->query($sql);
-
-              if (!$result) {
-			  	die("Invalid query: " . $connection->error);
-			  }
-
-            // read data of each row
-			  while($row = $result->fetch_assoc()) {
-                
-                
-                echo '
-                  <div class="card mx-5">
-                    <div class="card-body p-2 px-5 d-flex justify-content-between">
-                      <span>' . $row["emp_name"] . '</span>
-                      
-                      <span>
-                        <input type="date" name="dateofduty" class="form-control" />
-                      </span>
-                      <span>
-                        <button type="submit" name="save_date" class="btn btn-primary">Save Data</button>
-                      </span>
-                    </div>
-                  </div>';
-            }
-            if(isset($_POST['save_date']))
-              {
-                
-                $duty_day = date('Y-m-d', strtotime($_POST['dateofduty']));
-
-                $query = "INSERT INTO employee (duty_day) VALUES ('$duty_day')";
-                $query_run = mysqli_query($connection, $query);
-
-                if($query_run)
-                {
-                    $_SESSION['status'] = "Date values Inserted";
-                    header("Location: assign_duty.php");
-                }
-                else
-                {
-                    $_SESSION['status'] = "Date values Inserting Failed";
-                    header("Location: assign_duty.php");
-                }
-            }
-
-            $connection->close();
-            ?>
+      <?php
         
-      
-    </section>
-  </main><!-- End #main -->
+        require("./conn.php");
+            
+              $sql = "SELECT * FROM employee";
+              $result=mysqli_query($conn,$sql);
+
+            if (!$result) {
+                die("Invalid query: " . $connection->error);
+            }
+
+          // read data of each row
+            while($row = $result->fetch_assoc()) {
+       
+echo' <div class="card mx-5 ">
+<div class="card-body p-2 px-5 d-flex justify-content-between">';
+  echo ' <span > <input type="text" name="emp" id="emp"class="form-control" placeholder="' .$row["emp_id"] .'"/>' . $row["emp_name"] . '</span>
+  <span>
+     <input type="date" name="dateofduty" id="dateofduty"class="form-control" />
+   </span>
+   <span>
+   <button type="button" id="btnRegister" name="btnRegister"  class="btn btn-primary" >Assign</button>
+   </span>
+ </div>
+</div>
+
+</section>';
+
+
+}
+?>
+
+      <!-- End #main -->
   <div class="fixed-bottom bg-light">
     <?php include("./templates/footer.php") ?>
   </div>
 
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <?php
 
+  ?>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -122,9 +159,16 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <script src="js/bootstrap.js"></script>
+  <script src="js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/jquery.slimscroll.js"></script>
+  <script src="js/jquery.nicescroll.js"></script>
+  <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+  <script src="js/jquery.scrollTo.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
 
+</body>
 </html>
