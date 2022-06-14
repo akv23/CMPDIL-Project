@@ -123,7 +123,7 @@
        
 echo' <div class="card mx-5 ">
 <div class="card-body p-2 px-5 d-flex justify-content-between">';
-  echo ' <span > <input type="text" name="emp" id="emp"class="form-control" placeholder="' .$row["emp_id"] .'"/>' . $row["emp_name"] . '</span>
+  echo ' <span > <input type="text" name="emp" id="emp"class="form-control" value="' .$row["emp_id"] .'"/>' . $row["emp_name"] . '</span>
   <span>
      <input type="date" name="dateofduty" id="dateofduty"class="form-control" />
    </span>

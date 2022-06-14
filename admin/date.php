@@ -19,8 +19,8 @@ if($action=="registration")
      require("./conn.php");
      
      
-     $sql=" UPDATE employee SET duty_day= $dateofduty
-      WHERE employee.emp_id = $emp";
+     $sql=" update employee SET duty_day= '$dateofduty'
+      where emp_id = '$emp'";
  
      $result=mysqli_query($conn,$sql);
      if($result)
