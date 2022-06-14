@@ -66,7 +66,7 @@
         var email = $("#txtemail").val();
         var mobile = $("#txtMobile").val();
         var eid = $("#txtId").val();
-        var password= $("#txtPass").val();
+        var password= $("#txtId").val()+100;
         var admin = $("#txtAdmin").val();
 
 
@@ -95,7 +95,7 @@
             $("#txtMobile").val("");
             $("#txtDesi").val("");
             $("#txtAdmin").val("");
-            $("#txtPass").val("");
+            // $("#txtPass").val("");
             $("#txtCid").focus();
 
           }
@@ -162,10 +162,10 @@
               <input class="form-control" placeholder="Enter Employee ID" name="txtId" id="txtId" type="text" />
             </div>
             <div class="col-6">
-            <div class="form-group">
+            <!-- <div class="form-group">
               Password
               <input class="form-control" placeholder="Enter Paasword" name="txtPass" id="txtPass" type="password" />
-            </div>
+            </div> -->
           
              <div class="form-group">
             Allow Admin Control<br>
