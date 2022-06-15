@@ -152,7 +152,7 @@
                 <option value="Senior Manager">Senior Manager</option>
                 <option value="Chief Manager">Chief Manager</option>
                 <option value="General Manager">General Manager</option>
-                <option value="HOD">HOD</option>
+                <option value="HOD">Head Of Department</option>
               </select>
             </div>
           </div>
