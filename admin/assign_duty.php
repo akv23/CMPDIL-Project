@@ -107,37 +107,44 @@
    
         <section class="section dashboard">
       
+     
+        <select name="selectemployee" id="emp" class="form-control mr-sm-2">
+              <option selected="selected">Select Employee</option>
+              <?php
+              include "./conn.php";
+    
+                      
+             $sql="select * from employee";
+             $smt=mysqli_query($conn,$sql);
+              
+    {
+    ?>
+          <?php
+             while($rs=mysqli_fetch_assoc($smt)){?>
+      <option value="<?php echo $rs['emp_id']; ?>"><?php echo $rs['emp_name']; ?></option>
       <?php
-        
-        require("./conn.php");
-            
-              $sql = "SELECT * FROM employee";
-              $result=mysqli_query($conn,$sql);
-
-            if (!$result) {
-                die("Invalid query: " . $connection->error);
-            }
-
-          // read data of each row
-            while($row = $result->fetch_assoc()) {
-       
-echo' <div class="card mx-5 ">
-<div class="card-body p-2 px-5 d-flex justify-content-between">';
-  echo ' <span > <input type="text" name="emp" id="emp"class="form-control" value="' .$row["emp_id"] .'"/>' . $row["emp_name"] . '</span>
-  <span>
+             }
+             ?>
+      </select>
+    
+  <div>
      <input type="date" name="dateofduty" id="dateofduty"class="form-control" />
-   </span>
-   <span>
+            </div>
+   <div>
    <button type="button" id="btnRegister" name="btnRegister"  class="btn btn-primary" >Assign</button>
-   </span>
- </div>
-</div>
+            </div>
+ 
+            
+   <?php
+     
+    }
+  ?>
 
-</section>';
 
 
-}
-?>
+</section>
+
+
 
       <!-- End #main -->
   <div class="fixed-bottom bg-light">
