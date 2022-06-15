@@ -47,7 +47,11 @@ if($action=="registration")
      }
     }
      
+    else{
+        $smstext="Enter Data first";
+     echo $smstext;
      
+    }  
 
 
 }

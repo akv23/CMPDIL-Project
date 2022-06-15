@@ -68,7 +68,7 @@
 
         $.ajax({
           type: 'post',
-          url: 'update.php',
+          url: 'change.php',
           data: {
             'action': 'registration',
             'oldPass': oldPass,
@@ -138,7 +138,7 @@
           </div>
 
         </div>
-        <div id="error_disp_register"></div>
+        <div  id="error_disp_register"></div>
         <center class="py-3 d-grid">
           <button type="button" id="btnRegister" class="btn btn-lg btn-primary">Save</button>
         </center>

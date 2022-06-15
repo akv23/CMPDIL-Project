@@ -41,20 +41,30 @@ if($action=="registration")
      if($result)
      {
      
-     $smstext="Thank you, date assigned";
+     $smstext="Thank you, password changed";
      echo $smstext;
      
      
      }
      else
      {
-     echo "Sorry Not added.".mysqli_error($conn);
+     echo "Sorry Not changed.".mysqli_error($conn);
      }
     }
+    else{
+        $smstext="write correct password!"; 
+        echo $smstext;
+    }
+    
+    
      
      
 
 
+}
+else{
+    $smstext="enter password first!"; 
+    echo $smstext;
 }
 
  

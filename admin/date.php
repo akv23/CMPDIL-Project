@@ -36,8 +36,13 @@ if($action=="registration")
      echo "Sorry Not added.".mysqli_error($conn);
      }
     }
+    else{
+        $smstext="Enter Data first";
+     echo $smstext;
      
+    }
      
+
 
 
 }
